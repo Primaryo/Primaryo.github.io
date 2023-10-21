@@ -4,27 +4,25 @@
   
     
     <entry>
-      <title>用于测试使用</title>
-      <link href="/2023/10/20/%E7%94%A8%E4%BA%8E%E6%B5%8B%E8%AF%95%E4%BD%BF%E7%94%A8/"/>
-      <url>/2023/10/20/%E7%94%A8%E4%BA%8E%E6%B5%8B%E8%AF%95%E4%BD%BF%E7%94%A8/</url>
+      <title>四轴飞行器</title>
+      <link href="/2023/10/21/%E5%9B%9B%E8%BD%B4%E9%A3%9E%E8%A1%8C%E5%99%A8/"/>
+      <url>/2023/10/21/%E5%9B%9B%E8%BD%B4%E9%A3%9E%E8%A1%8C%E5%99%A8/</url>
       
         <content type="html"><![CDATA[]]></content>
       
       
       <categories>
           
-          <category> Linux </category>
+          <category> 单片机 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> blog </tag>
+            <tag> STM32 </tag>
             
-            <tag> 第一 </tag>
-            
-            <tag> arm </tag>
+            <tag> 无人机 </tag>
             
         </tags>
       
@@ -33,27 +31,25 @@
     
     
     <entry>
-      <title>我的第一篇博客</title>
-      <link href="/2023/10/19/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
-      <url>/2023/10/19/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+      <title>STM32启动文件解析</title>
+      <link href="/2023/10/21/STM32%E5%90%AF%E5%8A%A8%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/"/>
+      <url>/2023/10/21/STM32%E5%90%AF%E5%8A%A8%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/</url>
       
-        <content type="html"><![CDATA[<h1 id="一、代码演示"><a href="#一、代码演示" class="headerlink" title="一、代码演示"></a>一、代码演示</h1><h2 id="1-main函数"><a href="#1-main函数" class="headerlink" title="1.main函数"></a>1.main函数</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="2-add函数"><a href="#2-add函数" class="headerlink" title="2.add函数"></a>2.add函数</h2><h1 id="二、目录演示"><a href="#二、目录演示" class="headerlink" title="二、目录演示"></a>二、目录演示</h1><h2 id="1-二级目录"><a href="#1-二级目录" class="headerlink" title="1.二级目录"></a>1.二级目录</h2><h3 id="1-三级目录"><a href="#1-三级目录" class="headerlink" title="1.三级目录"></a>1.三级目录</h3>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
       
       <categories>
           
-          <category> hexo </category>
+          <category> 单片机 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> hexo </tag>
+            <tag> 汇编 </tag>
             
-            <tag> blog </tag>
-            
-            <tag> 第一 </tag>
+            <tag> STM32 </tag>
             
         </tags>
       
@@ -62,25 +58,54 @@
     
     
     <entry>
-      <title>Hello World</title>
-      <link href="/2023/10/19/hello-world/"/>
-      <url>/2023/10/19/hello-world/</url>
+      <title>ARM体系架构</title>
+      <link href="/2023/10/21/ARM%E4%BD%93%E7%B3%BB%E6%9E%B6%E6%9E%84/"/>
+      <url>/2023/10/21/ARM%E4%BD%93%E7%B3%BB%E6%9E%B6%E6%9E%84/</url>
       
-        <content type="html"><![CDATA[<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>以下内容部分摘录自ARM Cortex-M3 权威指南，仅用于个人交流与学习，如涉及侵权请联系站长删除！</p></blockquote><h1 id="第一章-ARM架构版本及处理器系列介绍"><a href="#第一章-ARM架构版本及处理器系列介绍" class="headerlink" title="第一章 ARM架构版本及处理器系列介绍"></a>第一章 ARM架构版本及处理器系列介绍</h1><h2 id="1-ARM背景"><a href="#1-ARM背景" class="headerlink" title="1.ARM背景"></a>1.ARM背景</h2><p>ARM在1990年成立，当初的名字是“Advanced RISC Machines Ltd.,”，当时它是三家公司的合资——它们分别是苹果电脑，Acorn电脑公司，以及VLSI技术（公司）。</p><p>ARM的版本分为两类，一个是内核版本，一个处理器版本。</p><ul><li>内核版本也就是ARM架构，如ARMv1、ARMv2、ARMv3、ARMv4、ARMv5、ARMv6、ARMv7、ARMv8等。</li><li>处理器版本也就是ARM处理器，如ARM1、ARM9、ARM11、ARM Cortex-A（A7、A9、A15），ARM Cortex-M（M1、M3、M4）、ARM Cortex-R，这个也是我们通常意义上所指的ARM版本。</li></ul><h2 id="2-ARM架构与处理器的关系"><a href="#2-ARM架构与处理器的关系" class="headerlink" title="2.ARM架构与处理器的关系"></a>2.ARM架构与处理器的关系</h2><p>基于不同的ARM架构可以设计出不同特点的ARM处理器。比如基于ARMv3架构设计出的处理器ARM6、ARM7，这两款处理器适用于不同的场景，硬件可能不同，但是架构指令集是一样的。</p><p>举个例子，比如说盖房子，早期因为发展落后，盖的都是平房，这就是一种架构(ARMv5)，然后这种平房架构你可以设计出一款三室一厅的款式， 这叫ARM7处理器。 然后其他人(芯片设计公司)想盖房子的就买你这个款式去盖，接着过一段时间，有人觉得光三室一厅的不好， 我还想每个房间有独立卫! 于是，ARM就满足你们的要求，出个独卫的款式(ARM9)。</p><p>即ARMv5等是指令集的架构，ARM7&#x2F;9等是基于架构设计出的内核处理器。ARM的架构都是基于RISC指令集而设计的，内核处理器是实现这一指令集的硬件架构的基础。</p><h2 id="3-ARM版本"><a href="#3-ARM版本" class="headerlink" title="3.ARM版本"></a>3.ARM版本</h2><p><img src="/image-20231021133206079.png" alt="image-20231021133206079"></p><p>最近的几年，基于从ARMv6开始的新设计理念，ARM进一步扩展了它的CPU设计，成果 就是ARMv7架构的闪亮登场。在这个版本中，内核架构首次从单一款式变成3种款式。 </p><ul><li><p>款式A：设计用于高性能的“开放应用平台”——越来越接近电脑了 </p></li><li><p>款式R：用于高端的嵌入式系统，尤其是那些带有实时要求的——又要快又要实时。 </p></li><li><p>款式M：用于深度嵌入的，单片机风格的系统中——本文章主要讲解的知识。</p></li></ul><p>让我们再进距离地考察这3种款式： </p><ul><li>款式A（ARMv7‐A）：需要运行复杂应用程序的“应用处理器” 。支持大型嵌入式操作系统，比如Symbian（诺基亚智能手机用），Linux，以及微软 的Windows CE和智能手机操作系统Windows Mobile。这些应用需要劲爆的处理性能，并 且需要硬件MMU实现的完整而强大的虚拟内存机制，还基本上会配有Java支持，有时 还要求一个安全程序执行环境。典型的产品包括高端手机和手持仪器，电子钱包以及金融事务处理机。 </li><li>款式R（ARMv7‐R）：硬实时且高性能的处理器。标的是高端实时市场。那些高级的玩意，像高档轿车的组件，大型发电机控制器，机器手臂控制器等，它们使用的处理 器不但要很好很强大，还要极其可靠，对事件的反应也要极其敏捷。 </li><li>款式M（ARMv7‐M）：认准了旧世代单片机的应用而量身定制。在这些应用中，尤其是 对于实时控制系统，低成本、低功耗、极速中断反应以及高处理效率，都是至关重要的。  Cortex系列是v7架构的第一次亮相，其中Cortex‐M3就是按款式M设计的。</li></ul><h1 id="第二章-ARM基础"><a href="#第二章-ARM基础" class="headerlink" title="第二章 ARM基础"></a>第二章 ARM基础</h1><h2 id="1-哈弗架构与冯诺伊曼架构"><a href="#1-哈弗架构与冯诺伊曼架构" class="headerlink" title="1.哈弗架构与冯诺伊曼架构"></a>1.<strong>哈弗架构与冯诺伊曼架构</strong></h2><p>CPU架构可以分为哈弗架构与冯诺伊曼架构，如下图所示。</p><ul><li><p><strong>哈弗架构</strong>中指令与数据分开存放，CPU可以同时读入指令、读写数据。</p><p><img src="/image-20231021135043353.png" alt="image-20231021135043353"></p></li><li><p><strong>冯诺伊曼架构</strong>中指令、数据混合存放，CPU依次读取指令、读写数据，不可同时操作指令和数据。</p><p><img src="/image-20231021135107115.png" alt="image-20231021135107115"></p></li></ul><blockquote><p>Cortex‐M3采用了哈佛结构，拥有独立的指令总线和数据总线，可以让取指与数据访问 并行不悖。</p></blockquote><h2 id="2-RISC与CISC"><a href="#2-RISC与CISC" class="headerlink" title="2. RISC与CISC"></a>2. RISC与CISC</h2><ul><li><strong>复杂指令集CISC</strong>:   以Intel、AMD的X86 CPU为代表，CISC也是要通过操作内存、寄存器、运算器来完成复杂指令的。它在实现时，是将复杂指令转换成了一个微程序，微程序在制造CPU时就已存储于微服务存储器。一个微程序包含若干条微指令（也称微码），执行复杂指令时，实际上是在执行一个微程序。这也带来两种指令集的一个差别，微程序的执行是不可被打断的，而RISC指令之间可以被打断，所以理论上RISC可更快响应中断。特点：</li><li><strong>精简指令集RISC</strong>：以ARM、IBM Power为代表，设计初衷针对CISC CPU复杂的弊端，选择一些可以在单个CPU周期完成的指令，以降低CPU的复杂度，将复杂性交给编译器</li></ul><blockquote><p><strong>ARM公司的芯片都使用RISC指令集，对内存只有load&#x2F;store操作，数据的处理是在CPU寄存器上进行。</strong></p></blockquote><ul><li>二者的比较：<ul><li>CISC的指令能力强，单多数指令使用率低却增加了CPU的复杂度，指令是可变长格式；</li><li>RISC的指令大部分为单周期指令，指令长度固定，操作寄存器，对于内存只有Load&#x2F;Store操作</li><li>CISC支持多种寻址方式；RISC支持的寻址方式</li><li>CISC通过微程序控制技术实现；</li><li>RISC增加了通用寄存器，硬布线逻辑控制为主，采用流水线</li><li>CISC的研制周期长</li><li>RISC优化编译，有效支持高级语言</li></ul></li></ul><h1 id="第三章-ARM-寄存器"><a href="#第三章-ARM-寄存器" class="headerlink" title="第三章 ARM 寄存器"></a>第三章 ARM 寄存器</h1>]]></content>
       
       
       <categories>
           
-          <category> C/C++ </category>
+          <category> 架构 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 代码 </tag>
+            <tag> ARM </tag>
             
-            <tag> C/C++ </tag>
+            <tag> 汇编 </tag>
+            
+            <tag> 架构 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>markdown语法基础教程</title>
+      <link href="/2023/10/19/Markdown%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/"/>
+      <url>/2023/10/19/Markdown%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<h1 id="1、标题"><a href="#1、标题" class="headerlink" title="1、标题"></a>1、标题</h1><p>快捷键：</p><ul><li>一级标题：ctrl+1</li><li>二级标题：ctrl+2</li><li>三级标题：ctrl+3</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br></pre></td></tr></table></figure><h1 id="2、加黑"><a href="#2、加黑" class="headerlink" title="2、加黑"></a>2、加黑</h1><p>快捷键：ctrl+B</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**加黑**</span><br></pre></td></tr></table></figure><h1 id="3、高亮"><a href="#3、高亮" class="headerlink" title="3、高亮"></a>3、高亮</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">==高亮==</span><br></pre></td></tr></table></figure><h1 id="4、输入代码"><a href="#4、输入代码" class="headerlink" title="4、输入代码"></a>4、输入代码</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">​```markdown </span><br></pre></td></tr></table></figure><h1 id="5、图片选项"><a href="#5、图片选项" class="headerlink" title="5、图片选项"></a>5、图片选项</h1><ul><li>点击左上角“文件”</li><li>进入“偏好设置”</li><li>点击图像，选择复制图像到当前文件夹</li><li>勾选下面的前三个选项</li></ul><h1 id="6、实心黑点（实心圆圈和空心圆）"><a href="#6、实心黑点（实心圆圈和空心圆）" class="headerlink" title="6、实心黑点（实心圆圈和空心圆）"></a>6、实心黑点（实心圆圈和空心圆）</h1><ul><li>先按shift+tab，让光标回到行首</li><li>按下一个减号（-），然后再按一个空格即可</li><li><strong>空心圆：</strong>在按下适应黑点后，再按一个tab键即可</li></ul><h1 id="7、更改字体大小和样式"><a href="#7、更改字体大小和样式" class="headerlink" title="7、更改字体大小和样式"></a>7、更改字体大小和样式</h1><ul><li><strong>字体大小</strong>：偏好设置里面自定义设置</li><li><strong>字体样式</strong>：打开主题文件夹。我们需要打开 .css文件更改里面的内容才可以！<strong>可以使用 notepad++编辑！</strong></li></ul><h1 id="8、小条状标题：-加空格"><a href="#8、小条状标题：-加空格" class="headerlink" title="8、小条状标题：&gt; 加空格"></a>8、小条状标题：&gt; 加空格</h1><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt; </span><br></pre></td></tr></table></figure><ul><li>打开<strong>github.css</strong>文件</li><li>找到blockquote，修改solid的值即可</li></ul><h1 id="9、图片"><a href="#9、图片" class="headerlink" title="9、图片"></a>9、图片</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 本地图片</span><br><span class="line">&lt;img src=&quot;/assets/pusheencode.webp&quot; alt=&quot;示例图片&quot; style=&quot;zoom:50%;&quot; /&gt;</span><br><span class="line"># 在线图片</span><br><span class="line">![code](https://cdn.jsdelivr.net/gh/fomalhaut1998/markdown_pic/img/code.png)</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> markdown </tag>
+            
+            <tag> 教程 </tag>
             
         </tags>
       
