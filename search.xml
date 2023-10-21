@@ -4,6 +4,48 @@
   
     
     <entry>
+      <title>test2</title>
+      <link href="/2023/10/21/test2/"/>
+      <url>/2023/10/21/test2/</url>
+      
+        <content type="html"><![CDATA[<p><img src="/./test2/1.png"></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>TEST</title>
+      <link href="/2023/10/21/test/"/>
+      <url>/2023/10/21/test/</url>
+      
+        <content type="html"><![CDATA[<p>插入图片测试：</p><p><img src="/image-20231021150841571.png" alt="image-20231021150841571"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 架构 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ARM </tag>
+            
+            <tag> 汇编 </tag>
+            
+            <tag> 架构 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>四轴飞行器</title>
       <link href="/2023/10/21/%E5%9B%9B%E8%BD%B4%E9%A3%9E%E8%A1%8C%E5%99%A8/"/>
       <url>/2023/10/21/%E5%9B%9B%E8%BD%B4%E9%A3%9E%E8%A1%8C%E5%99%A8/</url>
@@ -62,7 +104,7 @@
       <link href="/2023/10/21/ARM%E4%BD%93%E7%B3%BB%E6%9E%B6%E6%9E%84/"/>
       <url>/2023/10/21/ARM%E4%BD%93%E7%B3%BB%E6%9E%B6%E6%9E%84/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>以下内容部分摘录自ARM Cortex-M3 权威指南，仅用于个人交流与学习，如涉及侵权请联系站长删除！</p></blockquote><h1 id="第一章-ARM架构版本及处理器系列介绍"><a href="#第一章-ARM架构版本及处理器系列介绍" class="headerlink" title="第一章 ARM架构版本及处理器系列介绍"></a>第一章 ARM架构版本及处理器系列介绍</h1><h2 id="1-ARM背景"><a href="#1-ARM背景" class="headerlink" title="1.ARM背景"></a>1.ARM背景</h2><p>ARM在1990年成立，当初的名字是“Advanced RISC Machines Ltd.,”，当时它是三家公司的合资——它们分别是苹果电脑，Acorn电脑公司，以及VLSI技术（公司）。</p><p>ARM的版本分为两类，一个是内核版本，一个处理器版本。</p><ul><li>内核版本也就是ARM架构，如ARMv1、ARMv2、ARMv3、ARMv4、ARMv5、ARMv6、ARMv7、ARMv8等。</li><li>处理器版本也就是ARM处理器，如ARM1、ARM9、ARM11、ARM Cortex-A（A7、A9、A15），ARM Cortex-M（M1、M3、M4）、ARM Cortex-R，这个也是我们通常意义上所指的ARM版本。</li></ul><h2 id="2-ARM架构与处理器的关系"><a href="#2-ARM架构与处理器的关系" class="headerlink" title="2.ARM架构与处理器的关系"></a>2.ARM架构与处理器的关系</h2><p>基于不同的ARM架构可以设计出不同特点的ARM处理器。比如基于ARMv3架构设计出的处理器ARM6、ARM7，这两款处理器适用于不同的场景，硬件可能不同，但是架构指令集是一样的。</p><p>举个例子，比如说盖房子，早期因为发展落后，盖的都是平房，这就是一种架构(ARMv5)，然后这种平房架构你可以设计出一款三室一厅的款式， 这叫ARM7处理器。 然后其他人(芯片设计公司)想盖房子的就买你这个款式去盖，接着过一段时间，有人觉得光三室一厅的不好， 我还想每个房间有独立卫! 于是，ARM就满足你们的要求，出个独卫的款式(ARM9)。</p><p>即ARMv5等是指令集的架构，ARM7&#x2F;9等是基于架构设计出的内核处理器。ARM的架构都是基于RISC指令集而设计的，内核处理器是实现这一指令集的硬件架构的基础。</p><h2 id="3-ARM版本"><a href="#3-ARM版本" class="headerlink" title="3.ARM版本"></a>3.ARM版本</h2><p><img src="/image-20231021133206079.png" alt="image-20231021133206079"></p><p>最近的几年，基于从ARMv6开始的新设计理念，ARM进一步扩展了它的CPU设计，成果 就是ARMv7架构的闪亮登场。在这个版本中，内核架构首次从单一款式变成3种款式。 </p><ul><li><p>款式A：设计用于高性能的“开放应用平台”——越来越接近电脑了 </p></li><li><p>款式R：用于高端的嵌入式系统，尤其是那些带有实时要求的——又要快又要实时。 </p></li><li><p>款式M：用于深度嵌入的，单片机风格的系统中——本文章主要讲解的知识。</p></li></ul><p>让我们再进距离地考察这3种款式： </p><ul><li>款式A（ARMv7‐A）：需要运行复杂应用程序的“应用处理器” 。支持大型嵌入式操作系统，比如Symbian（诺基亚智能手机用），Linux，以及微软 的Windows CE和智能手机操作系统Windows Mobile。这些应用需要劲爆的处理性能，并 且需要硬件MMU实现的完整而强大的虚拟内存机制，还基本上会配有Java支持，有时 还要求一个安全程序执行环境。典型的产品包括高端手机和手持仪器，电子钱包以及金融事务处理机。 </li><li>款式R（ARMv7‐R）：硬实时且高性能的处理器。标的是高端实时市场。那些高级的玩意，像高档轿车的组件，大型发电机控制器，机器手臂控制器等，它们使用的处理 器不但要很好很强大，还要极其可靠，对事件的反应也要极其敏捷。 </li><li>款式M（ARMv7‐M）：认准了旧世代单片机的应用而量身定制。在这些应用中，尤其是 对于实时控制系统，低成本、低功耗、极速中断反应以及高处理效率，都是至关重要的。  Cortex系列是v7架构的第一次亮相，其中Cortex‐M3就是按款式M设计的。</li></ul><h1 id="第二章-ARM基础"><a href="#第二章-ARM基础" class="headerlink" title="第二章 ARM基础"></a>第二章 ARM基础</h1><h2 id="1-哈弗架构与冯诺伊曼架构"><a href="#1-哈弗架构与冯诺伊曼架构" class="headerlink" title="1.哈弗架构与冯诺伊曼架构"></a>1.<strong>哈弗架构与冯诺伊曼架构</strong></h2><p>CPU架构可以分为哈弗架构与冯诺伊曼架构，如下图所示。</p><ul><li><p><strong>哈弗架构</strong>中指令与数据分开存放，CPU可以同时读入指令、读写数据。</p><p><img src="/image-20231021135043353.png" alt="image-20231021135043353"></p></li><li><p><strong>冯诺伊曼架构</strong>中指令、数据混合存放，CPU依次读取指令、读写数据，不可同时操作指令和数据。</p><p><img src="/image-20231021135107115.png" alt="image-20231021135107115"></p></li></ul><blockquote><p>Cortex‐M3采用了哈佛结构，拥有独立的指令总线和数据总线，可以让取指与数据访问 并行不悖。</p></blockquote><h2 id="2-RISC与CISC"><a href="#2-RISC与CISC" class="headerlink" title="2. RISC与CISC"></a>2. RISC与CISC</h2><ul><li><strong>复杂指令集CISC</strong>:   以Intel、AMD的X86 CPU为代表，CISC也是要通过操作内存、寄存器、运算器来完成复杂指令的。它在实现时，是将复杂指令转换成了一个微程序，微程序在制造CPU时就已存储于微服务存储器。一个微程序包含若干条微指令（也称微码），执行复杂指令时，实际上是在执行一个微程序。这也带来两种指令集的一个差别，微程序的执行是不可被打断的，而RISC指令之间可以被打断，所以理论上RISC可更快响应中断。特点：</li><li><strong>精简指令集RISC</strong>：以ARM、IBM Power为代表，设计初衷针对CISC CPU复杂的弊端，选择一些可以在单个CPU周期完成的指令，以降低CPU的复杂度，将复杂性交给编译器</li></ul><blockquote><p><strong>ARM公司的芯片都使用RISC指令集，对内存只有load&#x2F;store操作，数据的处理是在CPU寄存器上进行。</strong></p></blockquote><ul><li>二者的比较：<ul><li>CISC的指令能力强，单多数指令使用率低却增加了CPU的复杂度，指令是可变长格式；</li><li>RISC的指令大部分为单周期指令，指令长度固定，操作寄存器，对于内存只有Load&#x2F;Store操作</li><li>CISC支持多种寻址方式；RISC支持的寻址方式</li><li>CISC通过微程序控制技术实现；</li><li>RISC增加了通用寄存器，硬布线逻辑控制为主，采用流水线</li><li>CISC的研制周期长</li><li>RISC优化编译，有效支持高级语言</li></ul></li></ul><h1 id="第三章-ARM-寄存器"><a href="#第三章-ARM-寄存器" class="headerlink" title="第三章 ARM 寄存器"></a>第三章 ARM 寄存器</h1>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>以下内容部分摘录自ARM Cortex-M3 权威指南，仅用于个人交流与学习，如涉及侵权请联系站长删除！</p></blockquote><h1 id="第一章-ARM架构版本及处理器系列介绍"><a href="#第一章-ARM架构版本及处理器系列介绍" class="headerlink" title="第一章 ARM架构版本及处理器系列介绍"></a>第一章 ARM架构版本及处理器系列介绍</h1><h2 id="1-ARM背景"><a href="#1-ARM背景" class="headerlink" title="1.ARM背景"></a>1.ARM背景</h2><p>ARM在1990年成立，当初的名字是“Advanced RISC Machines Ltd.,”，当时它是三家公司的合资——它们分别是苹果电脑，Acorn电脑公司，以及VLSI技术（公司）。</p><p>ARM的版本分为两类，一个是内核版本，一个处理器版本。</p><ul><li>内核版本也就是ARM架构，如ARMv1、ARMv2、ARMv3、ARMv4、ARMv5、ARMv6、ARMv7、ARMv8等。</li><li>处理器版本也就是ARM处理器，如ARM1、ARM9、ARM11、ARM Cortex-A（A7、A9、A15），ARM Cortex-M（M1、M3、M4）、ARM Cortex-R，这个也是我们通常意义上所指的ARM版本。</li></ul><h2 id="2-ARM架构与处理器的关系"><a href="#2-ARM架构与处理器的关系" class="headerlink" title="2.ARM架构与处理器的关系"></a>2.ARM架构与处理器的关系</h2><p>基于不同的ARM架构可以设计出不同特点的ARM处理器。比如基于ARMv3架构设计出的处理器ARM6、ARM7，这两款处理器适用于不同的场景，硬件可能不同，但是架构指令集是一样的。</p><p>举个例子，比如说盖房子，早期因为发展落后，盖的都是平房，这就是一种架构(ARMv5)，然后这种平房架构你可以设计出一款三室一厅的款式， 这叫ARM7处理器。 然后其他人(芯片设计公司)想盖房子的就买你这个款式去盖，接着过一段时间，有人觉得光三室一厅的不好， 我还想每个房间有独立卫! 于是，ARM就满足你们的要求，出个独卫的款式(ARM9)。</p><p>即ARMv5等是指令集的架构，ARM7&#x2F;9等是基于架构设计出的内核处理器。ARM的架构都是基于RISC指令集而设计的，内核处理器是实现这一指令集的硬件架构的基础。</p><h2 id="3-ARM版本"><a href="#3-ARM版本" class="headerlink" title="3.ARM版本"></a>3.ARM版本</h2><p><a href="https://i.imgs.ovh/2023/10/21/27pEN.png">https://i.imgs.ovh/2023/10/21/27pEN.png</a></p><p><img src="/ARM%E4%BD%93%E7%B3%BB%E6%9E%B6%E6%9E%84/27pEN.png" alt="code"></p><p>最近的几年，基于从ARMv6开始的新设计理念，ARM进一步扩展了它的CPU设计，成果 就是ARMv7架构的闪亮登场。在这个版本中，内核架构首次从单一款式变成3种款式。 </p><ul><li><p>款式A：设计用于高性能的“开放应用平台”——越来越接近电脑了 </p></li><li><p>款式R：用于高端的嵌入式系统，尤其是那些带有实时要求的——又要快又要实时。 </p></li><li><p>款式M：用于深度嵌入的，单片机风格的系统中——本文章主要讲解的知识。</p></li></ul><p>让我们再进距离地考察这3种款式： </p><ul><li>款式A（ARMv7‐A）：需要运行复杂应用程序的“应用处理器” 。支持大型嵌入式操作系统，比如Symbian（诺基亚智能手机用），Linux，以及微软 的Windows CE和智能手机操作系统Windows Mobile。这些应用需要劲爆的处理性能，并 且需要硬件MMU实现的完整而强大的虚拟内存机制，还基本上会配有Java支持，有时 还要求一个安全程序执行环境。典型的产品包括高端手机和手持仪器，电子钱包以及金融事务处理机。 </li><li>款式R（ARMv7‐R）：硬实时且高性能的处理器。标的是高端实时市场。那些高级的玩意，像高档轿车的组件，大型发电机控制器，机器手臂控制器等，它们使用的处理 器不但要很好很强大，还要极其可靠，对事件的反应也要极其敏捷。 </li><li>款式M（ARMv7‐M）：认准了旧世代单片机的应用而量身定制。在这些应用中，尤其是 对于实时控制系统，低成本、低功耗、极速中断反应以及高处理效率，都是至关重要的。  Cortex系列是v7架构的第一次亮相，其中Cortex‐M3就是按款式M设计的。</li></ul><h1 id="第二章-ARM基础"><a href="#第二章-ARM基础" class="headerlink" title="第二章 ARM基础"></a>第二章 ARM基础</h1><h2 id="1-哈弗架构与冯诺伊曼架构"><a href="#1-哈弗架构与冯诺伊曼架构" class="headerlink" title="1.哈弗架构与冯诺伊曼架构"></a>1.<strong>哈弗架构与冯诺伊曼架构</strong></h2><p>CPU架构可以分为哈弗架构与冯诺伊曼架构，如下图所示。</p><ul><li><p><strong>哈弗架构</strong>中指令与数据分开存放，CPU可以同时读入指令、读写数据。</p><p><img src="/ARM%E4%BD%93%E7%B3%BB%E6%9E%B6%E6%9E%84/image-20231021135043353.png" alt="image-20231021135043353"></p></li><li><p><strong>冯诺伊曼架构</strong>中指令、数据混合存放，CPU依次读取指令、读写数据，不可同时操作指令和数据。</p><p><img src="/ARM%E4%BD%93%E7%B3%BB%E6%9E%B6%E6%9E%84/image-20231021135107115.png" alt="image-20231021135107115"></p></li></ul><blockquote><p>Cortex‐M3采用了哈佛结构，拥有独立的指令总线和数据总线，可以让取指与数据访问 并行不悖。</p></blockquote><h2 id="2-RISC与CISC"><a href="#2-RISC与CISC" class="headerlink" title="2. RISC与CISC"></a>2. RISC与CISC</h2><ul><li><strong>复杂指令集CISC</strong>:   以Intel、AMD的X86 CPU为代表，CISC也是要通过操作内存、寄存器、运算器来完成复杂指令的。它在实现时，是将复杂指令转换成了一个微程序，微程序在制造CPU时就已存储于微服务存储器。一个微程序包含若干条微指令（也称微码），执行复杂指令时，实际上是在执行一个微程序。这也带来两种指令集的一个差别，微程序的执行是不可被打断的，而RISC指令之间可以被打断，所以理论上RISC可更快响应中断。特点：</li><li><strong>精简指令集RISC</strong>：以ARM、IBM Power为代表，设计初衷针对CISC CPU复杂的弊端，选择一些可以在单个CPU周期完成的指令，以降低CPU的复杂度，将复杂性交给编译器</li></ul><blockquote><p><strong>ARM公司的芯片都使用RISC指令集，对内存只有load&#x2F;store操作，数据的处理是在CPU寄存器上进行。</strong></p></blockquote><ul><li>二者的比较：<ul><li>CISC的指令能力强，单多数指令使用率低却增加了CPU的复杂度，指令是可变长格式；</li><li>RISC的指令大部分为单周期指令，指令长度固定，操作寄存器，对于内存只有Load&#x2F;Store操作</li><li>CISC支持多种寻址方式；RISC支持的寻址方式</li><li>CISC通过微程序控制技术实现；</li><li>RISC增加了通用寄存器，硬布线逻辑控制为主，采用流水线</li><li>CISC的研制周期长</li><li>RISC优化编译，有效支持高级语言</li></ul></li></ul><h1 id="第三章-ARM-寄存器"><a href="#第三章-ARM-寄存器" class="headerlink" title="第三章 ARM 寄存器"></a>第三章 ARM 寄存器</h1>]]></content>
       
       
       <categories>
