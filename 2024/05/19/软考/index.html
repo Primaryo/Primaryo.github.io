@@ -1,0 +1,1437 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>软考 | Zero One</title><meta name="author" content="Primary"><meta name="copyright" content="Primary"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="* 运算符优先级 ①圆括号【（）】、下标运算符【[]】、分量运算符的指向结构体成员运算符【-&gt;】、结构体成员运算符【.】 ②逻辑非运算符【!】、按位取反运算符【~】、自增自减运算符【++】【 –】、负号运算符【-】、类型转换运算符【(类型)】、指针运算符和取地址运算符【*】【&amp;】、长度运算符【sizeof】 ③乘法运算符【*】、除法运算符【&#x2F;】、取余运算符【%】 ④加法运算">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软考">
+<meta property="og:url" content="https://primaryo.github.io/2024/05/19/%E8%BD%AF%E8%80%83/index.html">
+<meta property="og:site_name" content="Zero One">
+<meta property="og:description" content="* 运算符优先级 ①圆括号【（）】、下标运算符【[]】、分量运算符的指向结构体成员运算符【-&gt;】、结构体成员运算符【.】 ②逻辑非运算符【!】、按位取反运算符【~】、自增自减运算符【++】【 –】、负号运算符【-】、类型转换运算符【(类型)】、指针运算符和取地址运算符【*】【&amp;】、长度运算符【sizeof】 ③乘法运算符【*】、除法运算符【&#x2F;】、取余运算符【%】 ④加法运算">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://primaryo.github.io/2024/05/19/%E8%BD%AF%E8%80%83/image-20240518131132307.png">
+<meta property="article:published_time" content="2024-05-19T13:57:20.254Z">
+<meta property="article:modified_time" content="2024-05-19T14:00:51.143Z">
+<meta property="article:author" content="Primary">
+<meta property="article:tag" content="笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://primaryo.github.io/2024/05/19/%E8%BD%AF%E8%80%83/image-20240518131132307.png"><link rel="shortcut icon" href="/./img/blogger.png"><link rel="canonical" href="https://primaryo.github.io/2024/05/19/%E8%BD%AF%E8%80%83/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":100},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Primary","link":"链接: ","source":"来源: Zero One","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '软考',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-05-19 22:00:51'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/./img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">24</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/2024/05/19/%E8%BD%AF%E8%80%83/image-20240518131132307.png')"><nav id="nav"><span id="blog-info"><a href="/" title="Zero One"><span class="site-name">Zero One</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">软考</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-05-19T13:57:20.254Z" title="发表于 2024-05-19 21:57:20">2024-05-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-05-19T14:00:51.143Z" title="更新于 2024-05-19 22:00:51">2024-05-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">7.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>25分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="软考"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="* 运算符优先级"></a>* 运算符优先级</h2><ul>
+<li>①圆括号【（）】、下标运算符【[]】、分量运算符的指向结构体成员运算符【-&gt;】、结构体成员运算符【.】</li>
+<li>②逻辑非运算符【!】、按位取反运算符【~】、自增自减运算符【++】【 –】、负号运算符【-】、类型转换运算符【(类型)】、指针运算符和取地址运算符【*】【&amp;】、长度运算符【sizeof】</li>
+<li>③乘法运算符【*】、除法运算符【&#x2F;】、取余运算符【%】</li>
+<li>④加法运算符【+】、减法运算符【-】</li>
+<li>⑤左移动运算符【&lt;&lt;】、右移动运算符【&gt;&gt;】</li>
+<li>⑥关系运算符【&lt; 】【&gt;】【&lt;&#x3D;】【 &gt;&#x3D; 】</li>
+<li>⑦等于运算符【&#x3D;&#x3D;】、不等于运算符【!&#x3D;】</li>
+<li>⑧按位与运算符【&amp;】</li>
+<li>⑨按位异或运算符【^】</li>
+<li>⑩按位或运算符【|】</li>
+<li>逻辑与运算符【&amp;&amp;】</li>
+<li>逻辑或运算符【||】</li>
+<li>条件运算符【?:】</li>
+<li>赋值运算符【&#x3D;】【&#x2F;&#x3D;】【*&#x3D;】【%&#x3D;】【+&#x3D;】【-&#x3D;】【&lt;&lt;&#x3D;】【&gt;&gt;&#x3D;】【&amp;&#x3D;】【^&#x3D;】【|&#x3D;】</li>
+<li>逗号运算符【,】</li>
+</ul>
+<h2 id="计算圈复杂度"><a href="#计算圈复杂度" class="headerlink" title="* 计算圈复杂度"></a>* 计算圈复杂度</h2><h3 id="①没有流程图"><a href="#①没有流程图" class="headerlink" title="①没有流程图"></a>①没有流程图</h3><p>V &#x3D; 1 + 分支数（for、if、switch、while等）</p>
+<p>对于一个复合条件就加1，两个就加2，以此类推</p>
+<h3 id="②给定流程图"><a href="#②给定流程图" class="headerlink" title="②给定流程图"></a>②给定流程图</h3><p>V &#x3D; E - N +2 </p>
+<p>E 流程图中边的数量，N 流程图中节点的数量</p>
+<h3 id="③给定流程图"><a href="#③给定流程图" class="headerlink" title="③给定流程图"></a>③给定流程图</h3><p>V &#x3D; P + 1</p>
+<p>P 流程图中判定节点的数量</p>
+<h1 id="1-计算机系统基础"><a href="#1-计算机系统基础" class="headerlink" title="1 计算机系统基础"></a>1 计算机系统基础</h1><h2 id="1-基础知识"><a href="#1-基础知识" class="headerlink" title="1 基础知识"></a>1 基础知识</h2><h3 id="1-算存储容量"><a href="#1-算存储容量" class="headerlink" title="1 算存储容量"></a>1 算存储容量</h3><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240518100133718.png" alt="image-20240518100133718"></p>
+<ul>
+<li>公式：末地址 - 首地址 + 1</li>
+</ul>
+<h3 id="2-数的表示"><a href="#2-数的表示" class="headerlink" title="2 数的表示"></a>2 数的表示</h3><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240518100407906.png" alt="image-20240518100407906"></p>
+<ul>
+<li>反码，正数的反码与原码相同，<strong>负数的反码：原码的符号位不变，其余位取反</strong></li>
+<li>补码，正数的补码与原码相同，<strong>负数的补码：在反码的基础上加1</strong></li>
+<li>移码，<strong>在补码的基础上符号位取反</strong></li>
+</ul>
+<h3 id="3-定点数与浮点数"><a href="#3-定点数与浮点数" class="headerlink" title="3 定点数与浮点数"></a>3 定点数与浮点数</h3><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240518101451168.png" alt="image-20240518101451168"></p>
+<h2 id="2-计算机基本组成"><a href="#2-计算机基本组成" class="headerlink" title="2 计算机基本组成"></a>2 计算机基本组成</h2><h3 id="计算机基本组成"><a href="#计算机基本组成" class="headerlink" title="计算机基本组成"></a>计算机基本组成</h3><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240518102258417.png" alt="image-20240518102258417"></p>
+<p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240518102513333.png" alt="image-20240518102513333"></p>
+<h3 id="总线系统"><a href="#总线系统" class="headerlink" title="总线系统"></a>总线系统</h3><ul>
+<li>数据总线，双向</li>
+<li>地址总线，单向，CPU -&gt; RAM</li>
+<li>控制总线，双向</li>
+</ul>
+<p>总线的带宽 &#x3D; 位宽 * 工作频率， 单位时间处理的数据量，也可以这样计算，总数据量&#x2F;总时间</p>
+<h3 id="指令系统"><a href="#指令系统" class="headerlink" title="指令系统"></a>指令系统</h3><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240518103526276.png" alt="image-20240518103526276"></p>
+<h4 id="寻址方式"><a href="#寻址方式" class="headerlink" title="寻址方式"></a>寻址方式</h4><p>不同寻址方式的目的</p>
+<ul>
+<li>扩大寻址空间</li>
+<li>提高编程的灵活性</li>
+</ul>
+<p>如一个操作数位为0x40，其地址为0x10000，存放地址的位置是0x2000</p>
+<ul>
+<li>立即数寻址，MOV R,#40H</li>
+<li>直接寻址，MOV R,[10000H]</li>
+<li>间接寻址，MOV R,[20000H]</li>
+<li>寄存器寻址</li>
+<li>寄存器间接寻址</li>
+</ul>
+<h2 id="3-流水线"><a href="#3-流水线" class="headerlink" title="3 流水线"></a>3 流水线</h2><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240518104953575.png" alt="image-20240518104953575"></p>
+<h2 id="4-多级存储器"><a href="#4-多级存储器" class="headerlink" title="4 多级存储器"></a>4 多级存储器</h2><h3 id="Cache"><a href="#Cache" class="headerlink" title="Cache"></a>Cache</h3><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240518105215659.png" alt="image-20240518105215659"></p>
+<h3 id="Cache页面置换算法"><a href="#Cache页面置换算法" class="headerlink" title="Cache页面置换算法"></a>Cache页面置换算法</h3><h4 id="直接映像和变换"><a href="#直接映像和变换" class="headerlink" title="直接映像和变换"></a>直接映像和变换</h4><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240518105904211.png" alt="image-20240518105904211"></p>
+<h4 id="全相联地址映像"><a href="#全相联地址映像" class="headerlink" title="全相联地址映像"></a>全相联地址映像</h4><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240518110033059.png" alt="image-20240518110033059"></p>
+<h4 id="组相联地址映像"><a href="#组相联地址映像" class="headerlink" title="组相联地址映像"></a>组相联地址映像</h4><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240518110210693.png" alt="image-20240518110210693"></p>
+<h2 id="5-IO控制方式"><a href="#5-IO控制方式" class="headerlink" title="5 IO控制方式"></a>5 IO控制方式</h2><ul>
+<li>直接程序控制</li>
+<li>DMA</li>
+<li>中断</li>
+<li>输入输出机制IOP</li>
+</ul>
+<h2 id="6-可靠性校验"><a href="#6-可靠性校验" class="headerlink" title="6 可靠性校验"></a>6 可靠性校验</h2><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240518125813096.png" alt="image-20240518125813096"></p>
+<h4 id="校验码"><a href="#校验码" class="headerlink" title="校验码"></a>校验码</h4><p>码距，比如A&#x3D;11，B&#x3D;00，则码距为2</p>
+<ul>
+<li>奇偶校验，只能检错，可检测1位（奇数）错，增加1位校验位<ul>
+<li>奇校验，编码中1的个数为奇数</li>
+<li>偶校验，编码中1的个数为偶数</li>
+</ul>
+</li>
+<li>循环冗余CRC，只能检错，可检测多位错，用模2运算<ul>
+<li>在K个数据位后追加R个校验位</li>
+</ul>
+</li>
+<li>海明码，可以检测，还能纠1位错<ul>
+<li>在n个数据位之间插入K个校验位，通过扩大码距来实现查错和纠错<ul>
+<li>2^k - 1 ≥  n+k</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="2-嵌入式系统软件"><a href="#2-嵌入式系统软件" class="headerlink" title="2 嵌入式系统软件"></a>2 嵌入式系统软件</h1><h2 id="1-嵌入式软件基础"><a href="#1-嵌入式软件基础" class="headerlink" title="1 嵌入式软件基础"></a>1 嵌入式软件基础</h2><h3 id="前后台系统"><a href="#前后台系统" class="headerlink" title="前后台系统"></a>前后台系统</h3><ul>
+<li>前台，中断</li>
+<li>后台，查询</li>
+</ul>
+<h3 id="体系结构"><a href="#体系结构" class="headerlink" title="体系结构"></a>体系结构</h3><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240518131132307.png" alt="image-20240518131132307"></p>
+<ul>
+<li>设备驱动层，也叫板级支持包BSP<ul>
+<li>引导加载程序BootLoader，依赖具体的硬件平台<ul>
+<li>片级初始化、板级初始化、加载内核</li>
+</ul>
+</li>
+<li>设备驱动程序<ul>
+<li>上层接口 + 硬件接口</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>中间件<ul>
+<li>可重用、提高开发效率、但会带来额外的开销</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-嵌入式操作系统概述"><a href="#2-嵌入式操作系统概述" class="headerlink" title="2 嵌入式操作系统概述"></a>2 嵌入式操作系统概述</h2><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240518132021519.png" alt="image-20240518132021519"></p>
+<h3 id="按软件体系结构"><a href="#按软件体系结构" class="headerlink" title="按软件体系结构"></a>按软件体系结构</h3><ul>
+<li>单体结构，如linux、uc&#x2F;OS<ul>
+<li>性能好，开销小，体积庞大</li>
+</ul>
+</li>
+<li>分层结构<ul>
+<li>开发和维护简单，上层只能调用下层，会带来额外的开销</li>
+</ul>
+</li>
+<li>微内核结构，如VxWorks、Windows CE、QNX、us&#x2F;OSII<ul>
+<li>内核小、会带来额外的开销</li>
+</ul>
+</li>
+</ul>
+<h1 id="3-操作系统"><a href="#3-操作系统" class="headerlink" title="3 操作系统"></a>3 操作系统</h1><ul>
+<li>3 操作系统</li>
+</ul>
+<h2 id="1-PV操作"><a href="#1-PV操作" class="headerlink" title="1 PV操作"></a>1 PV操作</h2><ul>
+<li><p>P</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">s = - 1</span><br><span class="line">if(s&lt;0)</span><br><span class="line">&#123;</span><br><span class="line">	存放到等待队列</span><br><span class="line">&#125;</span><br><span class="line">继续执行</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>V</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">s = s + 1</span><br><span class="line">if(s&lt;=0)</span><br><span class="line">&#123;</span><br><span class="line">	取出等待队列中的</span><br><span class="line">&#125;</span><br><span class="line">继续操作</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="2-进程管理"><a href="#2-进程管理" class="headerlink" title="2 进程管理"></a>2 进程管理</h2><h3 id="2-1-死锁公式"><a href="#2-1-死锁公式" class="headerlink" title="2.1 死锁公式"></a>2.1 死锁公式</h3><p>资源数 ≥  进程 *  （每个进程最大资源数-1）+ 1</p>
+<h3 id="2-2-任务调度"><a href="#2-2-任务调度" class="headerlink" title="2.2 任务调度"></a>2.2 任务调度</h3><h4 id="任务调度方式"><a href="#任务调度方式" class="headerlink" title="任务调度方式"></a>任务调度方式</h4><ul>
+<li>不可抢占：主动放弃cpu使用权，只要该任务在运行，不可被别的打断</li>
+<li>可抢占：可以被打断</li>
+</ul>
+<p>&#x3D;&#x3D;不可重入函数：不能由超过一个函数所共享&#x3D;&#x3D;</p>
+<h4 id="性能指标："><a href="#性能指标：" class="headerlink" title="性能指标："></a>性能指标：</h4><ul>
+<li>响应时间：调度器为一个就绪任务进行上下文切换所需要的时间 + 任务在就绪链表中的等待时间</li>
+<li>周转时间：一个任务从周到到完成所经历的时间</li>
+<li>吞吐量：单位时间内完成任务的数量</li>
+</ul>
+<h4 id="任务调度算法"><a href="#任务调度算法" class="headerlink" title="任务调度算法"></a>任务调度算法</h4><ul>
+<li><p>先来先服务FCFS</p>
+<ul>
+<li>平均周转时间：&#x3D;&#x3D;假如Ta&lt;Tb&lt;Tc，如果按Ta，Tb，Tc顺序执行，则 T &#x3D; (3Ta+2Tb+Tc)&#x2F;3&#x3D;&#x3D;</li>
+<li>短作业优先算法：选择执行时间短的任务先执行</li>
+</ul>
+</li>
+<li><p>时间片轮转RR</p>
+</li>
+<li><p>优先级算法</p>
+<ul>
+<li>可抢占</li>
+<li>不可抢占</li>
+</ul>
+</li>
+</ul>
+<h4 id="任务间通信"><a href="#任务间通信" class="headerlink" title="任务间通信"></a>任务间通信</h4><ul>
+<li>低级：信号量、信号</li>
+<li>高级：<ul>
+<li>共享内存，&#x3D;&#x3D;需要额外的同步机制&#x3D;&#x3D;</li>
+<li>消息传递<ul>
+<li>消息队列</li>
+<li>邮箱</li>
+</ul>
+</li>
+<li>管道：先进先出</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-存储管理"><a href="#3-存储管理" class="headerlink" title="3 存储管理"></a>3 存储管理</h2><ul>
+<li><p>分区存储：把程序整个直接调入到内存中执行</p>
+<ul>
+<li>静态</li>
+<li>动态</li>
+</ul>
+</li>
+<li><p>页式存储：将程序分成若干个页，每次调取某页到内存中某块去执行，&#x3D;&#x3D;逻辑地址&#x3D;&#x3D; &#x3D; 页号+页内地址(页大小)</p>
+<ul>
+<li>页号，页内地址，一个页号对应个块号</li>
+<li>块号，物理地址 &#x3D; 快号 + 页内地址</li>
+<li>&#x3D;&#x3D;求物理地址&#x3D;&#x3D;：<ul>
+<li>先根据页号找到物理快号，再用 块号+页内地址  就是对应的物理地址</li>
+<li>逻辑地址&#x2F;页大小 &#x3D; 页号，<strong>取整</strong>找到对应块号，逻辑地址%页大小 &#x3D; m，<strong>取余</strong>找到m，物理地址 &#x3D; 块号*页大小+m</li>
+</ul>
+</li>
+<li>&#x3D;&#x3D;优点：&#x3D;&#x3D;利用率高、碎片小、分配和管理简单</li>
+<li>&#x3D;&#x3D;缺点：&#x3D;&#x3D;增加了系统开销，可能产生抖动现象</li>
+</ul>
+</li>
+<li><p>段式存储：&#x3D;&#x3D;逻辑地址&#x3D;&#x3D; &#x3D; 段号+段内地址（位移量）</p>
+<ul>
+<li>&#x3D;&#x3D;求物理地址&#x3D;&#x3D;：根据段号找到段长，段表&#x3D; 段长+基址，物理地址 &#x3D; 基址 + 位移量 </li>
+<li>&#x3D;&#x3D;优点：&#x3D;&#x3D;多道程序内存共享，各段程序不干扰</li>
+<li>&#x3D;&#x3D;缺点：&#x3D;&#x3D;利用率低，内存碎片浪费大（外碎片）</li>
+</ul>
+</li>
+<li><p>段页式存储：&#x3D;&#x3D;逻辑地址&#x3D;&#x3D; &#x3D;段号+页号+页内地址</p>
+<ul>
+<li>&#x3D;&#x3D;优点：&#x3D;&#x3D;空间浪费小、存储共享容易，动态链接</li>
+<li>&#x3D;&#x3D;缺点：&#x3D;&#x3D;增加复杂性和开销，执行速度低</li>
+</ul>
+</li>
+<li><p>虚拟存储</p>
+<ul>
+<li>页面置换算法：存储块不够时，需要淘汰某个页面：淘汰访问过的，但是未被修改的页面</li>
+</ul>
+</li>
+<li><p>磁盘结构及调度算法</p>
+<ul>
+<li>&#x3D;&#x3D;读取磁盘数据时间&#x3D;&#x3D;：<ul>
+<li>磁道时间</li>
+<li>块（扇区）时间，即旋转延迟时间</li>
+<li>传输时间</li>
+</ul>
+</li>
+<li>非格式化容量：面数  x（磁道数&#x2F;面）x  内圆周长 x 最大位密度</li>
+<li>格式化容量：面数  x（磁道数&#x2F;面）x  （扇区数&#x2F;道） x  （字节数&#x2F;扇区）</li>
+<li>&#x3D;&#x3D;题型&#x3D;&#x3D;<ul>
+<li>求处理最长时间：<ul>
+<li>先算旋转一个物理块时间 t1&#x3D; 磁盘旋转周期&#x2F;物理块个数 ，处理一个物理块时间 t2</li>
+<li>T &#x3D; (t1+t2) + 【  (t1*(总块数-1)+t1+t2) * （总块数-1）】</li>
+</ul>
+</li>
+<li>求最短时间：<ul>
+<li>T &#x3D; （t1+t2）* 总块数</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-文件管理"><a href="#4-文件管理" class="headerlink" title="4 文件管理"></a>4 文件管理</h2><ul>
+<li>索引文件结构<ul>
+<li>一级索引</li>
+<li>二级索引</li>
+<li>三级索引</li>
+</ul>
+</li>
+<li>树形目录结构<ul>
+<li>绝对路径</li>
+<li>相对路径</li>
+</ul>
+</li>
+<li>空闲存储空间管理<ul>
+<li>位示图法</li>
+<li>&#x3D;&#x3D;题型&#x3D;&#x3D;<ul>
+<li>算8192号物理块在位示图的那个字中</li>
+<li>①判断从编号0开始还是1开始，如果是0开始，就是  (8192+1)&#x2F;16 &#x3D; 512.xx</li>
+<li>②判断是第0块开始，还是第1块开始，如果第0块，那就是512，否则就是513</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-设备管理"><a href="#5-设备管理" class="headerlink" title="5 设备管理"></a>5 设备管理</h2><p>虚设备与spooling技术</p>
+<ul>
+<li>提高IO速度，让CPU与IO速度匹配</li>
+<li>共享设备</li>
+</ul>
+<h1 id="4-网络基础"><a href="#4-网络基础" class="headerlink" title="4 网络基础"></a>4 网络基础</h1><h2 id="1-OSI七层模型"><a href="#1-OSI七层模型" class="headerlink" title="1 OSI七层模型"></a>1 OSI七层模型</h2><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240507190051732.png" alt="image-20240507190051732"></p>
+<h2 id="2-TCP-IP"><a href="#2-TCP-IP" class="headerlink" title="2 TCP&#x2F;IP"></a>2 TCP&#x2F;IP</h2><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240519195621785.png" alt="image-20240519195621785"></p>
+<p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240507191337293.png" alt="image-20240507191337293"></p>
+<p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240507191728213.png" alt="image-20240507191728213"></p>
+<ul>
+<li>路由器、三层交换机：分隔广播域</li>
+<li>交换机、网桥：分隔冲突域</li>
+<li>集线器、中继器：都不能</li>
+</ul>
+<h2 id="3-IP地址"><a href="#3-IP地址" class="headerlink" title="3 IP地址"></a>3 IP地址</h2><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240507193218713.png" alt="image-20240507193218713"></p>
+<p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240507194412419.png" alt="image-20240507194412419"></p>
+<p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240507194510643.png" alt="image-20240507194510643"></p>
+<h2 id="4-网络划分"><a href="#4-网络划分" class="headerlink" title="4 网络划分"></a>4 网络划分</h2><ul>
+<li>计算子网的个数，2^n, n表示子网的位数</li>
+<li>计算子网中可用的IP地址数，（2^m）- 2  , m表示主机号的位数，减2是因为（第一个表示子网地址，最后一个表示广播地址）</li>
+</ul>
+<h2 id="5-特殊IP地址"><a href="#5-特殊IP地址" class="headerlink" title="5 特殊IP地址"></a>5 特殊IP地址</h2><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240507195726027.png" alt="image-20240507195726027"></p>
+<h2 id="6-IPv6"><a href="#6-IPv6" class="headerlink" title="6 IPv6"></a>6 IPv6</h2><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240507200211470.png" alt="image-20240507200211470"></p>
+<p>其中12AB::CD30:0:0:0:0&#x2F;60 每一段16位，一共应该有8段，这里只有6段</p>
+<p>&#x3D;&#x3D;::压缩了2段，实际为12AB.0.0.CD30:0:0:0:0&#x2F;60&#x3D;&#x3D;</p>
+<p>::只能使用一次</p>
+<h2 id="7-DNS与DHCP"><a href="#7-DNS与DHCP" class="headerlink" title="7 DNS与DHCP"></a>7 DNS与DHCP</h2><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240507201457118.png" alt="image-20240507201457118"></p>
+<ul>
+<li><p>主机向本地域名服务器采用&#x3D;&#x3D;递归查询&#x3D;&#x3D;（必须回答IP与域名的关系）</p>
+</li>
+<li><p>本地域名服务器向根域名服务器采用&#x3D;&#x3D;迭代查询&#x3D;&#x3D;（受到一次迭代查询回复一次结果，回复内容不一定是IP与域名的关系，也可以是其它服务器地址）</p>
+<p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240507203905498.png" alt="image-20240507203905498"></p>
+</li>
+</ul>
+<h2 id="8-网络规划与设计"><a href="#8-网络规划与设计" class="headerlink" title="8 网络规划与设计"></a>8 网络规划与设计</h2><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240507204240957.png" alt="image-20240507204240957"></p>
+<ul>
+<li>为了控制成本，可以不需要汇聚层</li>
+</ul>
+<h2 id="9-网络故障诊断"><a href="#9-网络故障诊断" class="headerlink" title="9 网络故障诊断"></a>9 网络故障诊断</h2><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240507204621801.png" alt="image-20240507204621801"></p>
+<h1 id="5-安全性基础"><a href="#5-安全性基础" class="headerlink" title="5 安全性基础"></a>5 安全性基础</h1><h2 id="1-网络攻击"><a href="#1-网络攻击" class="headerlink" title="1 网络攻击"></a>1 网络攻击</h2><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240507205144641.png" alt="image-20240507205144641"></p>
+<p>主动攻击还有一种重放攻击，修改数据包中的ip地址</p>
+<ul>
+<li>被动攻击：截获（窃听）、流量分析</li>
+<li>主动攻击：篡改（伪造）、恶意程序（各种病毒）、拒接服务（DoS、DDoS）、重放攻击</li>
+</ul>
+<h2 id="2-网络安全内容"><a href="#2-网络安全内容" class="headerlink" title="2 网络安全内容"></a>2 网络安全内容</h2><ul>
+<li>保密性：登录口令、数字签名</li>
+<li>安全协议设计：针对具体的攻击（如假冒）设计安全通信协议</li>
+<li>访问控制：也叫存取控制或接入控制，对接入的权限加以控制</li>
+</ul>
+<h2 id="3-两类密码体制"><a href="#3-两类密码体制" class="headerlink" title="3 两类密码体制"></a>3 两类密码体制</h2><ul>
+<li><p>对称秘钥：加密秘钥和解密秘钥是相同的</p>
+<ul>
+<li>数据加密标准DES、三重DES 3DES、RC-5、IDEA、AES</li>
+<li>缺点<ul>
+<li>强度不高、但效率高</li>
+<li>秘钥</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>非对称密钥（公钥密码体制）：加密秘钥和解密秘钥是不同的，加密秘钥公开，解密秘钥私有</p>
+<ul>
+<li>&#x3D;&#x3D;A发明文给B，A用B的公钥加密，B用B的私钥解密&#x3D;&#x3D;</li>
+<li>RSA、Elgamal、椭圆曲线算法ECC</li>
+<li>缺点：<ul>
+<li>加密速度慢</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-RSA密码"><a href="#4-RSA密码" class="headerlink" title="4 RSA密码"></a>4 RSA密码</h2><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240508194553964.png" alt="image-20240508194553964"></p>
+<p>​	<img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240508195141254.png" alt="image-20240508195141254"></p>
+<ul>
+<li>n  &#x3D; 5x11&#x3D;55，φ(n)&#x3D;(5-1)x(11-1)&#x3D;40</li>
+<li>gcd(40,e)&#x3D;1,只能为7</li>
+<li>dx7mod40&#x3D;1，只能是23</li>
+</ul>
+<h2 id="5-数字签名与消息摘要"><a href="#5-数字签名与消息摘要" class="headerlink" title="5 数字签名与消息摘要"></a>5 数字签名与消息摘要</h2><ul>
+<li>认证：验证通信的双方的确是自己所要通信的对象<ul>
+<li>实体认证：数字签名</li>
+<li>消息认证：报文摘要</li>
+</ul>
+</li>
+<li>数字签名的实现<ul>
+<li>&#x3D;&#x3D;A发明文给B，A用自己A的私钥签名，B用A的公钥核实签名&#x3D;&#x3D;</li>
+</ul>
+</li>
+<li>保密性数字签名的实现<ul>
+<li>先签名+后加密，先解密，后核实签名</li>
+<li>&#x3D;&#x3D;A发明文给B，A用自己A的私钥签名，用B的公钥加密，B用自己B的私钥解密，用A的公钥核实签名&#x3D;&#x3D;</li>
+</ul>
+</li>
+<li>消息摘要<ul>
+<li>报文摘要</li>
+<li>MD5消息摘要算法（128位）、SHA安全散列算法（160位）</li>
+<li><strong>防止报文被篡改</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="6-数字信封"><a href="#6-数字信封" class="headerlink" title="6 数字信封"></a>6 数字信封</h2><p>对明文采用对称密钥加密，在利用非对称密钥传递对称密钥</p>
+<p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240508204235443.png" alt="image-20240508204235443"></p>
+<h2 id="7-PKI公钥基础设施"><a href="#7-PKI公钥基础设施" class="headerlink" title="7 PKI公钥基础设施"></a>7 PKI公钥基础设施</h2><ul>
+<li>CA（证书颁发机构）</li>
+<li>数字证书</li>
+<li>证书实现的安全保证<ul>
+<li>机密性、不可否认、完整性、鉴别</li>
+</ul>
+</li>
+<li>数字证书的主要内容：<ul>
+<li>公钥</li>
+<li>认证机构的签名：&#x3D;&#x3D;用CA私钥对证书签名&#x3D;&#x3D;</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240508205207776.png" alt="image-20240508205207776"></p>
+<h2 id="8-防火墙"><a href="#8-防火墙" class="headerlink" title="8 防火墙"></a>8 防火墙</h2><ul>
+<li>网络级，工作在网络层<ul>
+<li>包过滤（对IP包进行过滤），内网和外网之间用 屏蔽路由器 隔开</li>
+<li>状态检测</li>
+</ul>
+</li>
+<li>应用级<ul>
+<li>双穴主机：内网和外网之间用 双穴主机 隔开</li>
+<li>屏蔽主机：内网和外网之间用（屏蔽路由器+堡垒主机）隔开</li>
+<li>屏蔽子网：内网和外网之间用  DMZ（也叫非军事区）（屏蔽路由器+堡垒主机+屏蔽路由器）隔开</li>
+</ul>
+</li>
+</ul>
+<h2 id="9-入侵检测系统、计算机病毒"><a href="#9-入侵检测系统、计算机病毒" class="headerlink" title="9 入侵检测系统、计算机病毒"></a>9 入侵检测系统、计算机病毒</h2><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240508210146674.png" alt="image-20240508210146674"></p>
+<p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240508210246457.png" alt="image-20240508210246457"></p>
+<h2 id="10-常见的防病毒软件、网络安全协议"><a href="#10-常见的防病毒软件、网络安全协议" class="headerlink" title="10 常见的防病毒软件、网络安全协议"></a>10 常见的防病毒软件、网络安全协议</h2><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240508210656144.png" alt="image-20240508210656144"></p>
+<p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240508210714352.png" alt="image-20240508210714352"></p>
+<h1 id="6-嵌入式软件程序设计"><a href="#6-嵌入式软件程序设计" class="headerlink" title="6 嵌入式软件程序设计"></a>6 嵌入式软件程序设计</h1><h2 id="1-数据类型"><a href="#1-数据类型" class="headerlink" title="1 数据类型"></a>1 数据类型</h2><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240509194406342.png" alt="image-20240509194406342"></p>
+<h2 id="2-表达式"><a href="#2-表达式" class="headerlink" title="2 表达式"></a>2 表达式</h2><ul>
+<li>(a-b)*(c+d)变成后缀表达式</li>
+<li>先添加括号，在把括号里面的运算符移到括号的右边</li>
+<li>（(a-b)x(c+d)）-&gt;   ((ab)-(cd)+)x</li>
+<li>去掉括号：ab-cd+x</li>
+</ul>
+<h2 id="3-解释程序与编译程序"><a href="#3-解释程序与编译程序" class="headerlink" title="3 解释程序与编译程序"></a>3 解释程序与编译程序</h2><ul>
+<li>解释程序：也称解释器， 源代码 中间代码   慢</li>
+<li>编译程序：也称编译器 ，目标语言程序   块</li>
+<li>根本区别：<strong>能否产生独立的目标程序</strong></li>
+</ul>
+<p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240509200542150.png" alt="image-20240509200542150"></p>
+<h1 id="7-嵌入式系统开发与维护知识"><a href="#7-嵌入式系统开发与维护知识" class="headerlink" title="7 嵌入式系统开发与维护知识"></a>7 嵌入式系统开发与维护知识</h1><h2 id="1-开发模型"><a href="#1-开发模型" class="headerlink" title="1 开发模型"></a>1 开发模型</h2><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240510185112863.png" alt="image-20240510185112863"></p>
+<h3 id="1-1-瀑布模型"><a href="#1-1-瀑布模型" class="headerlink" title="1.1 瀑布模型"></a>1.1 瀑布模型</h3><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240510185701177.png" alt="image-20240510185701177"></p>
+<h3 id="1-2-原型、螺旋模型、增量模型"><a href="#1-2-原型、螺旋模型、增量模型" class="headerlink" title="1.2 原型、螺旋模型、增量模型"></a>1.2 原型、螺旋模型、增量模型</h3><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240510190514600.png" alt="image-20240510190514600"></p>
+<h3 id="1-3-V模型、喷泉模型、RAD"><a href="#1-3-V模型、喷泉模型、RAD" class="headerlink" title="1.3 V模型、喷泉模型、RAD"></a>1.3 V模型、喷泉模型、RAD</h3><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240510191101672.png" alt="image-20240510191101672"></p>
+<h3 id="1-4-构件组装模型"><a href="#1-4-构件组装模型" class="headerlink" title="1.4 构件组装模型"></a>1.4 构件组装模型</h3><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240510191428914.png" alt="image-20240510191428914"></p>
+<h2 id="2-敏捷开发方法（小项目、小团队）"><a href="#2-敏捷开发方法（小项目、小团队）" class="headerlink" title="2 敏捷开发方法（小项目、小团队）"></a>2 敏捷开发方法（小项目、小团队）</h2><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240510192426647.png" alt="image-20240510192426647"></p>
+<ul>
+<li>极限编程（XP）：约束多</li>
+<li>水晶方法（crystal）：约束少</li>
+<li>开放式源码：开发人员分散在不同地区，查错排障的高度并行性</li>
+<li>并列争球法：明确可重复方法过程，“冲刺”，不允许增加需求，允许不按照优先级来开发、不那么严格（后三条都与XP相反）</li>
+<li>功用驱动开发方法FDD：首席程序员 和 “类”程序员</li>
+<li>自适应软件开发方法ADS：三个非线性、重叠的开发阶段（猜测、合作与学习）</li>
+<li>动态系统开发方法DSDM：以<strong>业务</strong>为核心</li>
+</ul>
+<h2 id="3-项目管理"><a href="#3-项目管理" class="headerlink" title="3  项目管理"></a>3  项目管理</h2><h3 id="3-1-时间管理"><a href="#3-1-时间管理" class="headerlink" title="3.1 时间管理"></a>3.1 时间管理</h3><ul>
+<li>活动定义</li>
+<li>活动排序</li>
+<li>活动资源估算</li>
+<li>活动历时估算<ul>
+<li>专家判断法</li>
+<li>三点估算法</li>
+<li>功能点估算法</li>
+</ul>
+</li>
+<li>制定进度计划</li>
+<li>进度控制<ul>
+<li>是否关键活动</li>
+<li>偏差是否大于总时差</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-2-PERT图"><a href="#3-2-PERT图" class="headerlink" title="3.2 PERT图"></a>3.2 PERT图</h3><p>可以清晰的表示任务之间的关系</p>
+<h3 id="3-3-甘特图"><a href="#3-3-甘特图" class="headerlink" title="3.3 甘特图"></a>3.3 甘特图</h3><p>可以清晰的标识每一项任务的起始和结束时间</p>
+<h2 id="4-软件配置管理"><a href="#4-软件配置管理" class="headerlink" title="4 软件配置管理"></a>4 软件配置管理</h2><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240511203117234.png" alt="image-20240511203117234"></p>
+<ul>
+<li>检查点：比较实际时间与计划时间之间的差异</li>
+<li>里程碑：完成阶段性的标志</li>
+<li>基线：项目项经过正式审批，受到控制<ul>
+<li>功能基线（定义基线）：在<strong>系统分析与软件定义阶段</strong>结束时形成的<strong>系统设计规格说明书</strong></li>
+<li>分配基线（需求基线）：指派基线，<strong>软件需求分析</strong>结束时形成的<strong>软件需求规格说明书</strong></li>
+<li>产品基线：<strong>软件组装与系统测试阶段结束</strong>时形成的<strong>软件产品的全部分配项的规格说明</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="1-变更控制"><a href="#1-变更控制" class="headerlink" title="1 变更控制"></a>1 变更控制</h3><p>申请、评估、决策、实施、验证、存档</p>
+<h3 id="2-版本控制"><a href="#2-版本控制" class="headerlink" title="2 版本控制"></a>2 版本控制</h3><p>草稿状态、正式状态、修改状态</p>
+<h3 id="3-风险分类"><a href="#3-风险分类" class="headerlink" title="3 风险分类"></a>3 风险分类</h3><ul>
+<li>项目风险</li>
+<li>技术风险</li>
+<li>商业风险</li>
+</ul>
+<h3 id="4-软件能力成熟模型CMM"><a href="#4-软件能力成熟模型CMM" class="headerlink" title="4 软件能力成熟模型CMM"></a>4 软件能力成熟模型CMM</h3><p>规定<strong>软件研制和软件测试</strong>中的主要<strong>软件管理过程和工程过程</strong>的实践，评价企业的质量能力保证</p>
+<p>在CMM某一级达标时，<strong>必须是该级别的所有关键过程域满足要求，同时低级别的所有关键过程域也必须满足要求</strong></p>
+<ul>
+<li>初始级</li>
+<li>可重复级，项目级，纪律化</li>
+<li>已定义即，组织级，标准化</li>
+<li>已管理级，可预测，可量化</li>
+<li>优化级，不断改进，缺陷预防</li>
+</ul>
+<p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240511205608475.png" alt="image-20240511205608475"></p>
+<h2 id="5-系统分析（大题第1题，考需求分析）"><a href="#5-系统分析（大题第1题，考需求分析）" class="headerlink" title="5 系统分析（大题第1题，考需求分析）"></a>5 系统分析（大题第1题，考需求分析）</h2><h3 id="1-需求工程"><a href="#1-需求工程" class="headerlink" title="1 需求工程"></a>1 需求工程</h3><p>包括<strong>创建和维护需求文档</strong>所必须的活动</p>
+<p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240511210204914.png" alt="image-20240511210204914"></p>
+<h3 id="2-需求分类"><a href="#2-需求分类" class="headerlink" title="2 需求分类"></a>2 需求分类</h3><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240511210806145.png" alt="image-20240511210806145"></p>
+<h3 id="3-需求分析"><a href="#3-需求分析" class="headerlink" title="3 需求分析"></a>3 需求分析</h3><ul>
+<li>结构化分析</li>
+</ul>
+<p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240511212646616.png" alt="image-20240511212646616"></p>
+<ul>
+<li><p>面向对象分析UML（了解）</p>
+<p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240511212931265.png" alt="image-20240511212931265"></p>
+</li>
+</ul>
+<p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240511213515822.png" alt="image-20240511213515822"></p>
+<h2 id="6-系统设计"><a href="#6-系统设计" class="headerlink" title="6 系统设计"></a>6 系统设计</h2><ul>
+<li><p>结构化设计</p>
+<p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240511215152615.png" alt="image-20240511215152615"></p>
+</li>
+</ul>
+<p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240511214132516.png" alt="image-20240511214132516"></p>
+<p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240511214602317.png" alt="image-20240511214602317"></p>
+<ul>
+<li>面向对象设计</li>
+<li>软硬件协同设计</li>
+</ul>
+<h1 id="8-嵌入式系统实施"><a href="#8-嵌入式系统实施" class="headerlink" title="8 嵌入式系统实施"></a>8 嵌入式系统实施</h1><h2 id="1-测试"><a href="#1-测试" class="headerlink" title="1 测试"></a>1 测试</h2><p>主要作用：发现软件错误</p>
+<p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240512125201095.png" alt="image-20240512125201095"></p>
+<h2 id="2-测试方法"><a href="#2-测试方法" class="headerlink" title="2 测试方法"></a>2 测试方法</h2><ul>
+<li>动态测试<ul>
+<li>白盒测试</li>
+<li>灰盒测试</li>
+<li>黑盒测试</li>
+</ul>
+</li>
+<li>静态测试<ul>
+<li>桌前检查</li>
+<li>代码审查</li>
+<li>代码走查</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-测试用例"><a href="#3-测试用例" class="headerlink" title="3 测试用例"></a>3 测试用例</h2><ul>
+<li>黑盒测试法<ul>
+<li>等价类划分</li>
+<li>边界值分析</li>
+<li>错误推测</li>
+<li>因果图</li>
+</ul>
+</li>
+<li>白盒测试法<ul>
+<li>基本路径法</li>
+<li>循环覆盖法</li>
+<li>&#x3D;&#x3D;逻辑覆盖法&#x3D;&#x3D;（大题必考）<ul>
+<li>语句覆盖SC，设计足够多的测试用例，使得被测程序中的<strong>每条可执行语句</strong>至少被执行一次</li>
+<li>判定覆盖（分支覆盖）DC，<strong>每个判断的“真”、“假”分支</strong>至少被执行一次</li>
+<li>条件覆盖CC，<strong>每个逻辑条件的可能值</strong></li>
+<li>条件判定覆盖C&#x2F;DC，同时满足<strong>判定覆盖和条件覆盖</strong></li>
+<li>条件组合覆盖MCC，<strong>每条路径至少被覆盖一次</strong></li>
+<li>修正的条件判定覆盖MC&#x2F;DC，同时满足<strong>判定覆盖和条件覆盖</strong>，并且满足两次计算<ul>
+<li>条件C所在判定内的所有条件，除条件C外，其他条件的取值完全相同</li>
+<li>条件C取值相反</li>
+<li>判定的计算结果相反</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>例题</p>
+<p>求  if(A&amp;&amp;B){XXXX}达到100%语句、分支、MC&#x2F;DC覆盖的最少测试用例</p>
+<p>答案：1、2、3</p>
+<p>MC&#x2F;DC计算方法，如表格所示，至少需要用例1、用例2、用例3，即3个用例</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>A&amp;&amp;B</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>用例1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>用例3</td>
+<td>用例2</td>
+</tr>
+<tr>
+<td>用例2</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td></td>
+<td>用例1</td>
+</tr>
+<tr>
+<td>用例3</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>用例1</td>
+<td></td>
+</tr>
+<tr>
+<td>用例4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="4-测试阶段（测试级别）"><a href="#4-测试阶段（测试级别）" class="headerlink" title="4 测试阶段（测试级别）"></a>4 测试阶段（测试级别）</h2><ul>
+<li>单元测试，使用白盒测试</li>
+<li>集成测试（可能需要开发人员开发驱动模块和桩模块）<ul>
+<li>一次组装</li>
+<li>增量式组装（自顶向下、自底向上、混合式）</li>
+</ul>
+</li>
+<li>系统测试，使用灰盒测试<ul>
+<li>恢复、强度、性能、可靠性</li>
+</ul>
+</li>
+<li>确认测试，使用黑盒测试<ul>
+<li>内部确认、Alpha、Beta、验收</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-调试"><a href="#5-调试" class="headerlink" title="5 调试"></a>5 调试</h2><p>调试与测试的区别</p>
+<ul>
+<li>测试是找出存在的错误；调式是定位错误并修正错误</li>
+<li>调式在测试之后</li>
+<li>测试在已知的条件下，有预支结果；调式在未知的条件下，没有预支结果</li>
+<li>测试可以事先设计，进度确定；调试不能描述过程或持续时间</li>
+</ul>
+<h2 id="6-评审"><a href="#6-评审" class="headerlink" title="6 评审"></a>6 评审</h2><h2 id="7-验证与确认"><a href="#7-验证与确认" class="headerlink" title="7 验证与确认"></a>7 验证与确认</h2><p>验证关注过程</p>
+<p>确认关注结果																																		</p>
+<h1 id="9-数据结构与算法"><a href="#9-数据结构与算法" class="headerlink" title="9 数据结构与算法"></a>9 数据结构与算法</h1><h2 id="1-数据结构"><a href="#1-数据结构" class="headerlink" title="1 数据结构"></a>1 数据结构</h2><p>逻辑结构</p>
+<ul>
+<li>线性结构</li>
+<li>非线性结构</li>
+</ul>
+<h2 id="2-算法"><a href="#2-算法" class="headerlink" title="2 算法"></a>2 算法</h2><p>5个特性</p>
+<h2 id="3-线性表"><a href="#3-线性表" class="headerlink" title="3 线性表"></a>3 线性表</h2><ul>
+<li>顺序存储结构（顺序表）<ul>
+<li>存储连续</li>
+<li>查找方便，可以随机访问任意元素</li>
+</ul>
+</li>
+<li>链式存储结构（链表）<ul>
+<li>存储不连续</li>
+<li>插入、删除方便，但不可以随机访问任意元素</li>
+<li>&#x3D;&#x3D;链表的基本操作&#x3D;&#x3D;<ul>
+<li>单链表的插入</li>
+<li>单链表的删除</li>
+<li>双向链表的插入</li>
+<li>双向链表的删除</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-队列和栈"><a href="#4-队列和栈" class="headerlink" title="4 队列和栈"></a>4 队列和栈</h2><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240513192631738.png" alt="image-20240513192631738"></p>
+<p>队列</p>
+<ul>
+<li>空，head &#x3D;&#x3D; tail</li>
+<li>满，head &#x3D;&#x3D; (tail+1)%maxsize</li>
+</ul>
+<p>三个元素入栈顺序abc，则出栈顺序不可能的是cab</p>
+<h2 id="5-广义表"><a href="#5-广义表" class="headerlink" title="5 广义表"></a>5 广义表</h2><p>线性表的推广，LS &#x3D; (a0,a1,a2….an)</p>
+<p>如 LS &#x3D; (a , (a,b)  , (a,b,c))</p>
+<ul>
+<li><p>长度，最外层包含元素的个数，3</p>
+</li>
+<li><p>深度，含括号的重数，2</p>
+</li>
+</ul>
+<h2 id="6-串"><a href="#6-串" class="headerlink" title="6 串"></a>6 串</h2><p>由字符串组成的有限序列，是取值范围受限的线性表，S &#x3D; ‘a, b, c’</p>
+<h2 id="7-数组"><a href="#7-数组" class="headerlink" title="7 数组"></a>7 数组</h2><ul>
+<li>一维数组 a[n]，len表示每个元素的字节数<ul>
+<li>a[i]的存储地址：a + i*len</li>
+</ul>
+</li>
+<li>二维数组 a[m] [n]<ul>
+<li>a[i] [j] 的存储地址（按列存储）：a + j *m *len + i *len </li>
+<li>a[i] [j] 的存储地址（按行存储）：a + i *n *len + j *len</li>
+</ul>
+</li>
+</ul>
+<h2 id="8-树与二叉树（非线性）"><a href="#8-树与二叉树（非线性）" class="headerlink" title="8 树与二叉树（非线性）"></a>8 树与二叉树（非线性）</h2><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240513195800549.png" alt="image-20240513195800549"></p>
+<ul>
+<li><p>节点的度，就是节点有的边数</p>
+<ul>
+<li>节点1，2，6的度为2，节点3的度为1，节点4,5,7,8的度为0</li>
+</ul>
+</li>
+<li><p>树的高度，就是层数</p>
+<ul>
+<li>4层</li>
+</ul>
+</li>
+<li><p>叶子节点，子节点的个数为0的节点</p>
+<ul>
+<li>节点4578</li>
+</ul>
+</li>
+<li><p>分支节点，子节点的个数不为0的节点</p>
+<ul>
+<li>节点1236</li>
+</ul>
+</li>
+<li><p>内部节点</p>
+<ul>
+<li>节点236</li>
+</ul>
+</li>
+<li><p>父节点</p>
+</li>
+<li><p>子节点</p>
+</li>
+<li><p>兄弟节点，同一层的节点</p>
+</li>
+<li><p>层次</p>
+</li>
+</ul>
+<h3 id="二叉树（节点的个数2）"><a href="#二叉树（节点的个数2）" class="headerlink" title="二叉树（节点的个数2）"></a>二叉树（节点的个数2）</h3><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240513201728952.png" alt="image-20240513201728952"></p>
+<h3 id="二叉树遍历"><a href="#二叉树遍历" class="headerlink" title="二叉树遍历"></a>二叉树遍历</h3><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240513202045234.png" alt="image-20240513202045234"></p>
+<ul>
+<li>前序遍历，根-&gt;左-&gt;右<ul>
+<li>124 578 36</li>
+</ul>
+</li>
+<li>中序遍历，左-&gt;根-&gt;右<ul>
+<li>根节点1的左节点2，节点2的左节点4，所以先访问左节点4，再访问根节点2，再访问右节点5，右节点又是根节点，42</li>
+<li>但右节点5又是根节点，所以先访问左节点7，但是左节点7又是根节点，左节点无，右节点8，785</li>
+<li>最后到左节点2，根节点1，右节点3，但又有个右节点6,所以是136</li>
+<li>42 785 1 36</li>
+</ul>
+</li>
+<li>后序遍历，左-&gt;右-&gt;根<ul>
+<li>4 875 2 631</li>
+</ul>
+</li>
+<li>层次遍历<ul>
+<li>1 23 45 6 7 8</li>
+</ul>
+</li>
+</ul>
+<h2 id="9-堆"><a href="#9-堆" class="headerlink" title="9 堆"></a>9 堆</h2><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240513203555186.png" alt="image-20240513203555186"></p>
+<p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240513203806520.png" alt="image-20240513203806520"></p>
+<h2 id="10-图"><a href="#10-图" class="headerlink" title="10 图"></a>10 图</h2><h3 id="邻接矩阵表示法"><a href="#邻接矩阵表示法" class="headerlink" title="邻接矩阵表示法"></a>邻接矩阵表示法</h3><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240513204152067.png" alt="image-20240513204152067"></p>
+<p>五个顶点，就有五行五列</p>
+<p>第一行表示第一个顶点，与第一个顶点……..第五个顶点的关系</p>
+<p>与本身没有邻边</p>
+<h3 id="邻接链表表示法"><a href="#邻接链表表示法" class="headerlink" title="邻接链表表示法"></a>邻接链表表示法</h3><p>入度：指向节点的条数</p>
+<p>出度：指出的条数</p>
+<p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240513204553797.png" alt="image-20240513204553797"></p>
+<h3 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h3><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240513205529436.png" alt="image-20240513205529436"></p>
+<h2 id="11-查找"><a href="#11-查找" class="headerlink" title="11 查找"></a>11 查找</h2><h3 id="1-查找分类"><a href="#1-查找分类" class="headerlink" title="1 查找分类"></a>1 查找分类</h3><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240513205648873.png" alt="image-20240513205648873"></p>
+<h3 id="2-顺序查找算法"><a href="#2-顺序查找算法" class="headerlink" title="2 顺序查找算法"></a>2 顺序查找算法</h3><h4 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h4><h4 id="二分法查找（有序的线性表）"><a href="#二分法查找（有序的线性表）" class="headerlink" title="二分法查找（有序的线性表）"></a>二分法查找（有序的线性表）</h4><h3 id="3-树表查找"><a href="#3-树表查找" class="headerlink" title="3 树表查找"></a>3 树表查找</h3><h4 id="二叉查找树（也叫二叉排序树）"><a href="#二叉查找树（也叫二叉排序树）" class="headerlink" title="二叉查找树（也叫二叉排序树）"></a>二叉查找树（也叫二叉排序树）</h4><p>中序遍历即可得到有序序列，在树的两边查找</p>
+<p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240513211020228.png" alt="image-20240513211020228"></p>
+<h4 id="二叉平衡树"><a href="#二叉平衡树" class="headerlink" title="二叉平衡树"></a>二叉平衡树</h4><p>左边是平衡二叉树，右边不是（<strong>高度不超过1</strong>）</p>
+<p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240513211224608.png" alt="image-20240513211224608"></p>
+<h4 id="哈夫曼树"><a href="#哈夫曼树" class="headerlink" title="哈夫曼树"></a>哈夫曼树</h4><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240513213142443.png" alt="image-20240513213142443"></p>
+<p>对字符集中的字符进行编码和译码，最优二叉树不是唯一的</p>
+<h4 id="B树"><a href="#B树" class="headerlink" title="B树"></a>B树</h4><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240513213928149.png" alt="image-20240513213928149"></p>
+<ul>
+<li>所有的叶子节点都在同一层，也就是说根节点到每个叶子节点的路径长度一样</li>
+</ul>
+<h3 id="4-散列表查找"><a href="#4-散列表查找" class="headerlink" title="4 散列表查找"></a>4 散列表查找</h3><h4 id="哈希查找"><a href="#哈希查找" class="headerlink" title="哈希查找"></a>哈希查找</h4><p>已知关键字集合U，最大关键字为m，设计Hash函数，以关键字为自变量，得到的因变量为存储地址，</p>
+<p>得到一个地址区间T，这个地址空间就成为散列表，这个Hash函数称为散列函数</p>
+<p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240513215128810.png" alt="image-20240513215128810"></p>
+<p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240513215108236.png" alt="image-20240513215108236"></p>
+<p>地址冲突解决办法：</p>
+<ul>
+<li><p>链地址法（拉链法）</p>
+<ul>
+<li>将冲突的自变量用链表链接起来</li>
+</ul>
+</li>
+<li><p>开放地址法</p>
+<ul>
+<li><p>Hi &#x3D; (Hash(key) + di)%m</p>
+<p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240513215321448.png" alt="image-20240513215321448"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="10-数字电路基础"><a href="#10-数字电路基础" class="headerlink" title="10 数字电路基础"></a>10 数字电路基础</h1><h2 id="1-电子电路"><a href="#1-电子电路" class="headerlink" title="1 电子电路"></a>1 电子电路</h2><ul>
+<li>模拟电子电路</li>
+<li>数字电子电路</li>
+</ul>
+<h2 id="2-组合逻辑电路"><a href="#2-组合逻辑电路" class="headerlink" title="2 组合逻辑电路"></a>2 组合逻辑电路</h2><p>根据是否具有存储功能，分为</p>
+<ul>
+<li>组合逻辑电路，不含存储功能，输出仅取决于输入<ul>
+<li>译码器、多路选择器</li>
+</ul>
+</li>
+<li>时序逻辑电路，含存储功能，输出不仅取决于输入，还取决于存储单元中的值<ul>
+<li>寄存器，计数器</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-1-组合逻辑电路表示方法-真值表"><a href="#2-1-组合逻辑电路表示方法-真值表" class="headerlink" title="2.1 组合逻辑电路表示方法-真值表"></a>2.1 组合逻辑电路表示方法-真值表</h3><h3 id="2-2-组合逻辑电路表示方法-布尔代数"><a href="#2-2-组合逻辑电路表示方法-布尔代数" class="headerlink" title="2.2 组合逻辑电路表示方法-布尔代数"></a>2.2 组合逻辑电路表示方法-布尔代数</h3><ul>
+<li>与  AB</li>
+<li>或  A+B</li>
+<li>非</li>
+</ul>
+<h4 id="反演律（摩根定律）"><a href="#反演律（摩根定律）" class="headerlink" title="反演律（摩根定律）"></a>反演律（摩根定律）</h4><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240514191853725.png" alt="image-20240514191853725"></p>
+<h3 id="2-3-门电路"><a href="#2-3-门电路" class="headerlink" title="2.3 门电路"></a>2.3 门电路</h3><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240514192040816.png" alt="image-20240514192040816"></p>
+<h3 id="2-4-常用的组合逻辑电路-常用译码器"><a href="#2-4-常用的组合逻辑电路-常用译码器" class="headerlink" title="2.4 常用的组合逻辑电路-常用译码器"></a>2.4 常用的组合逻辑电路-常用译码器</h3><p>与之对应的事编码器，是译码器的逆过程</p>
+<ul>
+<li>二进制译码器，38译码器</li>
+<li>二-十进制译码器，8421码</li>
+</ul>
+<h3 id="2-5-常用的组合逻辑电路-显示译码器"><a href="#2-5-常用的组合逻辑电路-显示译码器" class="headerlink" title="2.5 常用的组合逻辑电路-显示译码器"></a>2.5 常用的组合逻辑电路-显示译码器</h3><p>译码驱动器+显示器</p>
+<p>LED、LCD</p>
+<h2 id="3-时序逻辑电路"><a href="#3-时序逻辑电路" class="headerlink" title="3 时序逻辑电路"></a>3 时序逻辑电路</h2><p><strong>组合逻辑电路+时序电路</strong></p>
+<h3 id="3-1-时钟信号"><a href="#3-1-时钟信号" class="headerlink" title="3.1 时钟信号"></a>3.1 时钟信号</h3><ul>
+<li>电平触发</li>
+<li>边沿触发</li>
+</ul>
+<h3 id="3-2-触发器"><a href="#3-2-触发器" class="headerlink" title="3.2 触发器"></a>3.2 触发器</h3><p>能够存储1位二进制值</p>
+<ul>
+<li>电平触发器（锁存器）</li>
+<li>边沿触发器（延迟型触发器），寄存器，计数器<ul>
+<li>抗干扰能力强</li>
+</ul>
+</li>
+<li>移位寄存器</li>
+<li>计数器<ul>
+<li>异步计数器，电路简单</li>
+<li>同步计数器，电路复杂</li>
+<li>环形计数器，进位模数和触发器级数相等</li>
+<li>扭环形计数器，进位模数是触发器级数的2倍</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-电平转换电路"><a href="#4-电平转换电路" class="headerlink" title="4 电平转换电路"></a>4 电平转换电路</h2><h3 id="数字集成电路"><a href="#数字集成电路" class="headerlink" title="数字集成电路"></a>数字集成电路</h3><ul>
+<li>双极型电路，晶体管TTL<ul>
+<li>电流控制器件</li>
+<li>负载能力强，功耗大</li>
+</ul>
+</li>
+<li>金属氧化半导体（单极型电路），MOS<ul>
+<li>PMOS集成电路，速度低</li>
+<li>NMOS集成电路，速度稍高</li>
+<li>CMOS集成电路<ul>
+<li>电压控制器件</li>
+<li>负载能力小，功耗低，传输延迟大，具有锁定效应</li>
+<li>不用的管脚需要接上下拉电阻</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="TTL-CMOS转换"><a href="#TTL-CMOS转换" class="headerlink" title="TTL -&gt;  CMOS转换"></a>TTL -&gt;  CMOS转换</h4><p>TTL电路与电源之间需要接上拉电阻</p>
+<h2 id="5-语音编码"><a href="#5-语音编码" class="headerlink" title="5 语音编码"></a>5 语音编码</h2><h3 id="声音三要素："><a href="#声音三要素：" class="headerlink" title="声音三要素："></a>声音三要素：</h3><ul>
+<li>音调，取决于频率，人的听觉范围20HZ-20KHZ</li>
+<li>音强，响度，取决于振幅</li>
+<li>音色，取决于形状</li>
+</ul>
+<h3 id="模拟信号数字化"><a href="#模拟信号数字化" class="headerlink" title="模拟信号数字化"></a>模拟信号数字化</h3><p>采样、保持、量化、编码</p>
+<h3 id="采样量化技术参数"><a href="#采样量化技术参数" class="headerlink" title="采样量化技术参数"></a>采样量化技术参数</h3><ul>
+<li>采样频率<ul>
+<li>人，40KHZ</li>
+<li>CD唱片，44.1KHZ</li>
+</ul>
+</li>
+<li>测量精度</li>
+<li>声道数</li>
+</ul>
+<h1 id="11-嵌入式微处理器"><a href="#11-嵌入式微处理器" class="headerlink" title="11 嵌入式微处理器"></a>11 嵌入式微处理器</h1><h2 id="1-基本结构"><a href="#1-基本结构" class="headerlink" title="1 基本结构"></a>1 基本结构</h2><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240514201754374.png" alt="image-20240514201754374"></p>
+<ul>
+<li>控制单元，负责取指、译码等操作<ul>
+<li>程序计数器</li>
+<li>指令寄存器</li>
+</ul>
+</li>
+<li>算术逻辑单元ALU，运算</li>
+<li>寄存器，暂时存储数据</li>
+</ul>
+<h2 id="2-嵌入式微处理器分类"><a href="#2-嵌入式微处理器分类" class="headerlink" title="2 嵌入式微处理器分类"></a>2 嵌入式微处理器分类</h2><ul>
+<li>MCU<ul>
+<li>可靠性强</li>
+</ul>
+</li>
+<li>MPU<ul>
+<li>性能强</li>
+</ul>
+</li>
+<li>DSP<ul>
+<li>专用于处理信号</li>
+<li>哈弗结构</li>
+</ul>
+</li>
+<li>SOC</li>
+</ul>
+<h2 id="3-体系结构"><a href="#3-体系结构" class="headerlink" title="3 体系结构"></a>3 体系结构</h2><ul>
+<li>冯 · 诺依曼，也称普林斯顿结构，指令和数据合并在一起<ul>
+<li>单一的地址和数据总线，需要先取指，再执行</li>
+<li>Intel的8086，ARM7，MIPS</li>
+</ul>
+</li>
+<li>哈佛结构，指令和数据分开存储<ul>
+<li>取指和执行可以完全重叠</li>
+<li>DSP、摩托罗拉公司的MC68系列、ATMEL的AVR、ARM9-ARM11</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-flynn分类"><a href="#4-flynn分类" class="headerlink" title="4 flynn分类"></a>4 flynn分类</h2><ul>
+<li>SISD 单指令单数据</li>
+<li>SIMD 单指令多数据</li>
+<li>MISD <strong>无实例</strong></li>
+<li>MIMD</li>
+</ul>
+<h2 id="5-CISC和RISC"><a href="#5-CISC和RISC" class="headerlink" title="5 CISC和RISC"></a>5 CISC和RISC</h2><ul>
+<li>RISC<ul>
+<li>指令少</li>
+<li>执行时间短</li>
+<li>编码长度固定</li>
+<li>简单寻址</li>
+<li>只能进行算术和逻辑操作</li>
+<li>采用优化编译技术</li>
+</ul>
+</li>
+<li>CISC，与之相反</li>
+</ul>
+<h2 id="6-常用的嵌入式处理器"><a href="#6-常用的嵌入式处理器" class="headerlink" title="6 常用的嵌入式处理器"></a>6 常用的嵌入式处理器</h2><ul>
+<li>8位，MCS-51</li>
+<li>16位，MSP430</li>
+<li>32位，ARM、MIPS、POWER PC、X86、SH系列</li>
+</ul>
+<h3 id="中断系统"><a href="#中断系统" class="headerlink" title="中断系统"></a>中断系统</h3><h4 id="中断处理过程"><a href="#中断处理过程" class="headerlink" title="中断处理过程"></a>中断处理过程</h4><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240514205546427.png" alt="image-20240514205546427"></p>
+<h4 id="中断识别"><a href="#中断识别" class="headerlink" title="中断识别"></a>中断识别</h4><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240514205812397.png" alt="image-20240514205812397"></p>
+<h3 id="JATG"><a href="#JATG" class="headerlink" title="JATG"></a>JATG</h3><h3 id="IO端口的编址方法"><a href="#IO端口的编址方法" class="headerlink" title="IO端口的编址方法"></a>IO端口的编址方法</h3><ul>
+<li>存储器映射法</li>
+<li>I&#x2F;O映射</li>
+</ul>
+<p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240514210819321.png" alt="image-20240514210819321"></p>
+<h3 id="双核处理器"><a href="#双核处理器" class="headerlink" title="双核处理器"></a>双核处理器</h3><p>软件角度</p>
+<ul>
+<li>对称多处理技术SMP</li>
+<li>非对称多处理技术AMP</li>
+</ul>
+<p>硬件角度</p>
+<ul>
+<li>同构多核，计算内核相同，地位相等<ul>
+<li>intel酷睿架构处理器</li>
+</ul>
+</li>
+<li>异构多核，计算内核不相同，地位不相等，主处理器+协处理器<ul>
+<li>AMD核显</li>
+</ul>
+</li>
+</ul>
+<h1 id="12-嵌入式系统的存储体系"><a href="#12-嵌入式系统的存储体系" class="headerlink" title="12 嵌入式系统的存储体系"></a>12 嵌入式系统的存储体系</h1><h2 id="1-分类"><a href="#1-分类" class="headerlink" title="1 分类"></a>1 分类</h2><ul>
+<li>按地位分：<ul>
+<li>主存储器，内存，主存</li>
+<li>辅助存储器，外存，如硬盘、U盘等</li>
+</ul>
+</li>
+<li>按信息存取方式：<ul>
+<li>RAM<ul>
+<li>DRAM<ul>
+<li>需要不断的刷新</li>
+</ul>
+</li>
+<li>SRAM<ul>
+<li>运行速度快，功耗大</li>
+</ul>
+</li>
+<li>SDRAM，同步动态随机存储器<ul>
+<li>需要同步时钟，不断地的刷新</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ROM<ul>
+<li>PROM</li>
+<li>EEPROM</li>
+<li>FALSH，写只能由1写为0<ul>
+<li>nand flash，数据闪存</li>
+<li>nor flash，代码闪存<ul>
+<li>可以直接运行应用程序</li>
+<li>读取速度比nand flash稍快，但写入速度慢很多</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-ROM"><a href="#2-ROM" class="headerlink" title="2 ROM"></a>2 ROM</h2><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240515191303839.png" alt="image-20240515191303839"></p>
+<h2 id="3-RAM"><a href="#3-RAM" class="headerlink" title="3 RAM"></a>3 RAM</h2><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240515192510946.png" alt="image-20240515192510946"></p>
+<h1 id="13-嵌入式系统输入输出设备"><a href="#13-嵌入式系统输入输出设备" class="headerlink" title="13 嵌入式系统输入输出设备"></a>13 嵌入式系统输入输出设备</h1><h2 id="1-GPIO"><a href="#1-GPIO" class="headerlink" title="1 GPIO"></a>1 GPIO</h2><h2 id="2-A-D转换器"><a href="#2-A-D转换器" class="headerlink" title="2 A&#x2F;D转换器"></a>2 A&#x2F;D转换器</h2><p>转换方法：</p>
+<ul>
+<li>计数法<ul>
+<li>结构简单，转换速度慢   num &#x3D; Vi&#x2F;Vmax*2^8</li>
+</ul>
+</li>
+<li>双积分式<ul>
+<li>抗干扰强，转换精度高，速度慢  Vi &#x3D; T2&#x2F;T1 * V</li>
+</ul>
+</li>
+<li>逐次逼近式<ul>
+<li>精度高，速度快</li>
+<li><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240515195052740.png" alt="image-20240515195052740"></li>
+<li><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240515195024158.png" alt="image-20240515195024158"></li>
+</ul>
+</li>
+</ul>
+<h3 id="3-D-A转换器"><a href="#3-D-A转换器" class="headerlink" title="3 D&#x2F;A转换器"></a>3 D&#x2F;A转换器</h3><ul>
+<li>精度<ul>
+<li>1&#x2F;(2^n - 1) * V</li>
+</ul>
+</li>
+<li>量程</li>
+</ul>
+<h1 id="14-嵌入式系统总线与通信接口"><a href="#14-嵌入式系统总线与通信接口" class="headerlink" title="14 嵌入式系统总线与通信接口"></a>14 嵌入式系统总线与通信接口</h1><h2 id="1-串行接口"><a href="#1-串行接口" class="headerlink" title="1 串行接口"></a>1 串行接口</h2><ul>
+<li>单工</li>
+<li>半双工</li>
+<li>双工</li>
+</ul>
+<h2 id="2-异步通信和同步通信"><a href="#2-异步通信和同步通信" class="headerlink" title="2 异步通信和同步通信"></a>2 异步通信和同步通信</h2><ul>
+<li>异步通信<ul>
+<li>接受方和发送发用各自的时钟</li>
+<li>一帧数据的各位之间的时间间隔是固定的，不同帧之间的时间间隔是不固定的</li>
+<li>传输线上允许有空字符</li>
+</ul>
+</li>
+<li>同步通信<ul>
+<li>接受方和发送发使用同频同相的时钟</li>
+<li>加同步字符</li>
+<li>采用字符块方式</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-常见的串行接口"><a href="#3-常见的串行接口" class="headerlink" title="3 常见的串行接口"></a>3 常见的串行接口</h2><ul>
+<li>RS232</li>
+<li>RS422<ul>
+<li>单机发送，多机接收，四线实现全双工，1219m，10Mb&#x2F;s</li>
+<li>差分方式，也叫平衡传输，最多可以接10个节点</li>
+</ul>
+</li>
+<li>RS485<ul>
+<li>二线可以实现多点双向通信，半双工，10Mb&#x2F;s</li>
+<li>四线只能跟422一样，点对多通信</li>
+<li>差分方式，32个设备</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-PCI总线"><a href="#4-PCI总线" class="headerlink" title="4 PCI总线"></a>4 PCI总线</h2><p>外围设备互联总线</p>
+<ul>
+<li>ISA(8&#x2F;16bit)     -&gt;    EISA(32bit)     -&gt;     PCI(32&#x2F;64bit)</li>
+<li>局部系统并行总线，猝发式</li>
+<li>地址总线与数据总线分时复用，支持即插即用，中断共享</li>
+<li>同一时刻只能供一对设备传输，需要仲裁</li>
+<li>内存空间+I&#x2F;O地址空间+配置空间</li>
+</ul>
+<h2 id="5-USB总线"><a href="#5-USB总线" class="headerlink" title="5 USB总线"></a>5 USB总线</h2><ul>
+<li>最多支持127个设备</li>
+<li>支持热插拔</li>
+<li>支持多个设备同时操作</li>
+<li>有较强的纠错能力</li>
+</ul>
+<h2 id="6-SPI、IIC"><a href="#6-SPI、IIC" class="headerlink" title="6 SPI、IIC"></a>6 SPI、IIC</h2><h2 id="7-网路接口"><a href="#7-网路接口" class="headerlink" title="7 网路接口"></a>7 网路接口</h2><ul>
+<li><h3 id="以太网接口-IEEE802-3标准"><a href="#以太网接口-IEEE802-3标准" class="headerlink" title="以太网接口   IEEE802.3标准"></a>以太网接口   IEEE802.3标准</h3><ul>
+<li>mac控制器和物理层接口</li>
+<li>曼彻斯特编码和差分曼彻斯特编码</li>
+<li>mac层的帧</li>
+</ul>
+<p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240516195546054.png" alt="image-20240516195546054"></p>
+</li>
+<li><p>CAN接口</p>
+<ul>
+<li>通信介质：双绞线、同轴电缆、光导纤维</li>
+<li>三层<ul>
+<li>应用层	微控制器</li>
+<li>数据链路层      can控制器</li>
+<li>物理层     can收发器</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>无线以太网</p>
+</li>
+<li><p>1394接口</p>
+<ul>
+<li>64位，串行总线</li>
+<li>事务层，软件</li>
+<li>链路层、物理层，硬件</li>
+<li>另外还有一个管理层</li>
+</ul>
+</li>
+</ul>
+<h3 id="RapdIO总线"><a href="#RapdIO总线" class="headerlink" title="RapdIO总线"></a>RapdIO总线</h3><h2 id="8-总线分类"><a href="#8-总线分类" class="headerlink" title="8 总线分类"></a>8 总线分类</h2><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240516202548070.png" alt="image-20240516202548070"></p>
+<p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240516202707795.png" alt="image-20240516202707795"></p>
+<h1 id="15-嵌入式硬件"><a href="#15-嵌入式硬件" class="headerlink" title="15 嵌入式硬件"></a>15 嵌入式硬件</h1><h2 id="1-电路设计原理"><a href="#1-电路设计原理" class="headerlink" title="1 电路设计原理"></a>1 电路设计原理</h2><ul>
+<li>设计原理图</li>
+<li>网络表<ul>
+<li>元器件声明</li>
+<li>网络定义</li>
+</ul>
+</li>
+<li>电路板</li>
+</ul>
+<h2 id="2-PCB电路设计"><a href="#2-PCB电路设计" class="headerlink" title="2 PCB电路设计"></a>2 PCB电路设计</h2><h2 id="3-电子设计"><a href="#3-电子设计" class="headerlink" title="3 电子设计"></a>3 电子设计</h2><h3 id="电子系统设计自动化ESDA"><a href="#电子系统设计自动化ESDA" class="headerlink" title="电子系统设计自动化ESDA"></a>电子系统设计自动化ESDA</h3><ul>
+<li>自顶向下</li>
+<li>关键电路采用集成电路ASIC实现</li>
+<li>硬件描述语言HDL</li>
+<li>通过综合器和适配器生成目标器件</li>
+</ul>
+<h3 id="ASIC分类"><a href="#ASIC分类" class="headerlink" title="ASIC分类"></a>ASIC分类</h3><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240517202657708.png" alt="image-20240517202657708"></p>
+<h3 id="硬件描述语言HDL"><a href="#硬件描述语言HDL" class="headerlink" title="硬件描述语言HDL"></a>硬件描述语言HDL</h3><ul>
+<li>DHL<ul>
+<li>用软件编程的方式描述电子系统的功能、电路结构和连接形式</li>
+</ul>
+</li>
+<li>VHDL<ul>
+<li>系统行为级、寄存器传输级和逻辑门等多个层次设计</li>
+<li>支持结构、数据流、行为</li>
+<li>五个部分：实体、结构体、库、包集合、配置</li>
+</ul>
+</li>
+</ul>
+<h3 id="电路级设计和系统级设计"><a href="#电路级设计和系统级设计" class="headerlink" title="电路级设计和系统级设计"></a>电路级设计和系统级设计</h3><h2 id="4-电子电路测试"><a href="#4-电子电路测试" class="headerlink" title="4 电子电路测试"></a>4 电子电路测试</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><h3 id="测试方法"><a href="#测试方法" class="headerlink" title="测试方法"></a>测试方法</h3><ul>
+<li>内部测试<ul>
+<li>元器件检查</li>
+</ul>
+</li>
+<li>功能测试<ul>
+<li>IC信号</li>
+</ul>
+</li>
+<li>边界扫描与JTAG</li>
+</ul>
+<h3 id="硬件干扰措施"><a href="#硬件干扰措施" class="headerlink" title="硬件干扰措施"></a>硬件干扰措施</h3><ul>
+<li>干扰源</li>
+<li>传播途径</li>
+<li>敏感器件</li>
+</ul>
+<h3 id="干扰的耦合方式"><a href="#干扰的耦合方式" class="headerlink" title="干扰的耦合方式"></a>干扰的耦合方式</h3><ul>
+<li>直接耦合，加入去耦电容</li>
+<li>公共阻抗耦合，常发生在2个电路电流共同</li>
+<li>电容耦合</li>
+<li>电感耦合</li>
+<li>漏电耦合</li>
+</ul>
+<h3 id="抗干扰措施"><a href="#抗干扰措施" class="headerlink" title="抗干扰措施"></a>抗干扰措施</h3><h1 id="16-知识产权与标准化"><a href="#16-知识产权与标准化" class="headerlink" title="16 知识产权与标准化"></a>16 知识产权与标准化</h1><h2 id="1-知识产权"><a href="#1-知识产权" class="headerlink" title="1 知识产权"></a>1 知识产权</h2><p>对<strong>智力劳动成果</strong>在一定时期享有的专有权或独占权</p>
+<p>分为</p>
+<ul>
+<li>工业产权</li>
+<li>著作权，作品完成是自动产生<ul>
+<li>也叫版权，人身权+财产权</li>
+</ul>
+</li>
+</ul>
+<h3 id="知识产权特点"><a href="#知识产权特点" class="headerlink" title="知识产权特点"></a>知识产权特点</h3><ul>
+<li>无形性</li>
+<li>独占性</li>
+<li>双重性，人身权+财产权</li>
+<li>地域性</li>
+<li>确认性</li>
+<li>时间性</li>
+</ul>
+<h3 id="是否为职务软件"><a href="#是否为职务软件" class="headerlink" title="是否为职务软件"></a>是否为职务软件</h3><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240517211050935.png" alt="image-20240517211050935"></p>
+<h2 id="2-保护范围与对象"><a href="#2-保护范围与对象" class="headerlink" title="2 保护范围与对象"></a>2 保护范围与对象</h2><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240517211217894.png" alt="image-20240517211217894"></p>
+<h2 id="3-保护期限"><a href="#3-保护期限" class="headerlink" title="3 保护期限"></a>3 保护期限</h2><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240517212103311.png" alt="image-20240517212103311"></p>
+<h2 id="4-知识产权的归属"><a href="#4-知识产权的归属" class="headerlink" title="4 知识产权的归属"></a>4 知识产权的归属</h2><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240517212533128.png" alt="image-20240517212533128"></p>
+<p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240517213003392.png" alt="image-20240517213003392"></p>
+<h2 id="5-合理使用"><a href="#5-合理使用" class="headerlink" title="5 合理使用"></a>5 合理使用</h2><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240517213100238.png" alt="image-20240517213100238"></p>
+<h2 id="6-侵权判定"><a href="#6-侵权判定" class="headerlink" title="6 侵权判定"></a>6 侵权判定</h2><p>作品不管是否发表，都享受著作权</p>
+<p>开发软件用的<strong>思想、处理过程、操作方法、数学概念</strong>不受保护</p>
+<p>著作权不适用于以下情形</p>
+<ul>
+<li>法律法规、各种法律文件、以及官方的正式译文</li>
+<li>时事新闻</li>
+<li>历法、通用数表、通用表格、公式</li>
+</ul>
+<p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240517214048286.png" alt="image-20240517214048286"></p>
+<h2 id="7-标准分类"><a href="#7-标准分类" class="headerlink" title="7 标准分类"></a>7 标准分类</h2><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240517214322989.png" alt="image-20240517214322989"></p>
+<p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240517214454403.png" alt="image-20240517214454403"></p>
+<h1 id="17-多媒体基础知识"><a href="#17-多媒体基础知识" class="headerlink" title="17 多媒体基础知识"></a>17 多媒体基础知识</h1><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240518095111929.png" alt="image-20240518095111929"></p>
+<p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240518095318845.png" alt="image-20240518095318845"></p>
+<h2 id="数字化过程"><a href="#数字化过程" class="headerlink" title="数字化过程"></a>数字化过程</h2><p>采样、量化、编码</p>
+<h2 id="容量计算"><a href="#容量计算" class="headerlink" title="容量计算"></a>容量计算</h2><p><img src="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240518095647596.png" alt="image-20240518095647596"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://primaryo.github.io">Primary</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://primaryo.github.io/2024/05/19/%E8%BD%AF%E8%80%83/">https://primaryo.github.io/2024/05/19/%E8%BD%AF%E8%80%83/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://primaryo.github.io" target="_blank">Zero One</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a></div><div class="post_share"><div class="social-share" data-image="/2024/05/19/%E8%BD%AF%E8%80%83/image-20240518131132307.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/./img/vx.jpg" target="_blank"><img class="post-qr-code-img" src="/./img/vx.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/./img/zfb.jpg" target="_blank"><img class="post-qr-code-img" src="/./img/zfb.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/./img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Primary</div><div class="author-info__description">技术让梦想更伟大</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">24</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Primaryo"><i></i><span>🛴前往我的GitHub</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Primaryo" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"><center>本站域名:<br><a href="https://primaryo.github.io"><b><font color="#5ea6e5">primaryo.github.io</font></b></a><br>扣扣:<br><b><font color="#5ea6e5">965617116</font></b></a></center></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">1.</span> <span class="toc-text">* 运算符优先级</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E5%9C%88%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-number">2.</span> <span class="toc-text">* 计算圈复杂度</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A0%E6%B2%A1%E6%9C%89%E6%B5%81%E7%A8%8B%E5%9B%BE"><span class="toc-number">2.1.</span> <span class="toc-text">①没有流程图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A1%E7%BB%99%E5%AE%9A%E6%B5%81%E7%A8%8B%E5%9B%BE"><span class="toc-number">2.2.</span> <span class="toc-text">②给定流程图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A2%E7%BB%99%E5%AE%9A%E6%B5%81%E7%A8%8B%E5%9B%BE"><span class="toc-number">2.3.</span> <span class="toc-text">③给定流程图</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80"><span class="toc-number"></span> <span class="toc-text">1 计算机系统基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-number">1.</span> <span class="toc-text">1 基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%AE%97%E5%AD%98%E5%82%A8%E5%AE%B9%E9%87%8F"><span class="toc-number">1.1.</span> <span class="toc-text">1 算存储容量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="toc-number">1.2.</span> <span class="toc-text">2 数的表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%AE%9A%E7%82%B9%E6%95%B0%E4%B8%8E%E6%B5%AE%E7%82%B9%E6%95%B0"><span class="toc-number">1.3.</span> <span class="toc-text">3 定点数与浮点数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90"><span class="toc-number">2.</span> <span class="toc-text">2 计算机基本组成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90"><span class="toc-number">2.1.</span> <span class="toc-text">计算机基本组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BA%BF%E7%B3%BB%E7%BB%9F"><span class="toc-number">2.2.</span> <span class="toc-text">总线系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F"><span class="toc-number">2.3.</span> <span class="toc-text">指令系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F"><span class="toc-number">2.3.1.</span> <span class="toc-text">寻址方式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%B5%81%E6%B0%B4%E7%BA%BF"><span class="toc-number">3.</span> <span class="toc-text">3 流水线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%A4%9A%E7%BA%A7%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">4.</span> <span class="toc-text">4 多级存储器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Cache"><span class="toc-number">4.1.</span> <span class="toc-text">Cache</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cache%E9%A1%B5%E9%9D%A2%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95"><span class="toc-number">4.2.</span> <span class="toc-text">Cache页面置换算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E6%98%A0%E5%83%8F%E5%92%8C%E5%8F%98%E6%8D%A2"><span class="toc-number">4.2.1.</span> <span class="toc-text">直接映像和变换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%A8%E7%9B%B8%E8%81%94%E5%9C%B0%E5%9D%80%E6%98%A0%E5%83%8F"><span class="toc-number">4.2.2.</span> <span class="toc-text">全相联地址映像</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%84%E7%9B%B8%E8%81%94%E5%9C%B0%E5%9D%80%E6%98%A0%E5%83%8F"><span class="toc-number">4.2.3.</span> <span class="toc-text">组相联地址映像</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-IO%E6%8E%A7%E5%88%B6%E6%96%B9%E5%BC%8F"><span class="toc-number">5.</span> <span class="toc-text">5 IO控制方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E5%8F%AF%E9%9D%A0%E6%80%A7%E6%A0%A1%E9%AA%8C"><span class="toc-number">6.</span> <span class="toc-text">6 可靠性校验</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%A1%E9%AA%8C%E7%A0%81"><span class="toc-number">6.0.1.</span> <span class="toc-text">校验码</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6"><span class="toc-number"></span> <span class="toc-text">2 嵌入式系统软件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">1 嵌入式软件基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.1.</span> <span class="toc-text">前后台系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-number">1.2.</span> <span class="toc-text">体系结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%B5%8C%E5%85%A5%E5%BC%8F%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0"><span class="toc-number">2.</span> <span class="toc-text">2 嵌入式操作系统概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%89%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-number">2.1.</span> <span class="toc-text">按软件体系结构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-number"></span> <span class="toc-text">3 操作系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-PV%E6%93%8D%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text">1 PV操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="toc-number">2.</span> <span class="toc-text">2 进程管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E6%AD%BB%E9%94%81%E5%85%AC%E5%BC%8F"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 死锁公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 任务调度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%E6%96%B9%E5%BC%8F"><span class="toc-number">2.2.1.</span> <span class="toc-text">任务调度方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87%EF%BC%9A"><span class="toc-number">2.2.2.</span> <span class="toc-text">性能指标：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95"><span class="toc-number">2.2.3.</span> <span class="toc-text">任务调度算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1%E9%97%B4%E9%80%9A%E4%BF%A1"><span class="toc-number">2.2.4.</span> <span class="toc-text">任务间通信</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">3 存储管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="toc-number">4.</span> <span class="toc-text">4 文件管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86"><span class="toc-number">5.</span> <span class="toc-text">5 设备管理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80"><span class="toc-number"></span> <span class="toc-text">4 网络基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-OSI%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">1 OSI七层模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-TCP-IP"><span class="toc-number">2.</span> <span class="toc-text">2 TCP&#x2F;IP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-IP%E5%9C%B0%E5%9D%80"><span class="toc-number">3.</span> <span class="toc-text">3 IP地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%BD%91%E7%BB%9C%E5%88%92%E5%88%86"><span class="toc-number">4.</span> <span class="toc-text">4 网络划分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E7%89%B9%E6%AE%8AIP%E5%9C%B0%E5%9D%80"><span class="toc-number">5.</span> <span class="toc-text">5 特殊IP地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-IPv6"><span class="toc-number">6.</span> <span class="toc-text">6 IPv6</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-DNS%E4%B8%8EDHCP"><span class="toc-number">7.</span> <span class="toc-text">7 DNS与DHCP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E7%BD%91%E7%BB%9C%E8%A7%84%E5%88%92%E4%B8%8E%E8%AE%BE%E8%AE%A1"><span class="toc-number">8.</span> <span class="toc-text">8 网络规划与设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E7%BD%91%E7%BB%9C%E6%95%85%E9%9A%9C%E8%AF%8A%E6%96%AD"><span class="toc-number">9.</span> <span class="toc-text">9 网络故障诊断</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E5%AE%89%E5%85%A8%E6%80%A7%E5%9F%BA%E7%A1%80"><span class="toc-number"></span> <span class="toc-text">5 安全性基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%BD%91%E7%BB%9C%E6%94%BB%E5%87%BB"><span class="toc-number">1.</span> <span class="toc-text">1 网络攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%86%85%E5%AE%B9"><span class="toc-number">2.</span> <span class="toc-text">2 网络安全内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%B8%A4%E7%B1%BB%E5%AF%86%E7%A0%81%E4%BD%93%E5%88%B6"><span class="toc-number">3.</span> <span class="toc-text">3 两类密码体制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-RSA%E5%AF%86%E7%A0%81"><span class="toc-number">4.</span> <span class="toc-text">4 RSA密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E4%B8%8E%E6%B6%88%E6%81%AF%E6%91%98%E8%A6%81"><span class="toc-number">5.</span> <span class="toc-text">5 数字签名与消息摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E6%95%B0%E5%AD%97%E4%BF%A1%E5%B0%81"><span class="toc-number">6.</span> <span class="toc-text">6 数字信封</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-PKI%E5%85%AC%E9%92%A5%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD"><span class="toc-number">7.</span> <span class="toc-text">7 PKI公钥基础设施</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E9%98%B2%E7%81%AB%E5%A2%99"><span class="toc-number">8.</span> <span class="toc-text">8 防火墙</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E7%B3%BB%E7%BB%9F%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%97%85%E6%AF%92"><span class="toc-number">9.</span> <span class="toc-text">9 入侵检测系统、计算机病毒</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-%E5%B8%B8%E8%A7%81%E7%9A%84%E9%98%B2%E7%97%85%E6%AF%92%E8%BD%AF%E4%BB%B6%E3%80%81%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE"><span class="toc-number">10.</span> <span class="toc-text">10 常见的防病毒软件、网络安全协议</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1"><span class="toc-number"></span> <span class="toc-text">6 嵌入式软件程序设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">1 数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">2 表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%A7%A3%E9%87%8A%E7%A8%8B%E5%BA%8F%E4%B8%8E%E7%BC%96%E8%AF%91%E7%A8%8B%E5%BA%8F"><span class="toc-number">3.</span> <span class="toc-text">3 解释程序与编译程序</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E4%B8%8E%E7%BB%B4%E6%8A%A4%E7%9F%A5%E8%AF%86"><span class="toc-number"></span> <span class="toc-text">7 嵌入式系统开发与维护知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%BC%80%E5%8F%91%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">1 开发模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E7%80%91%E5%B8%83%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 瀑布模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E5%8E%9F%E5%9E%8B%E3%80%81%E8%9E%BA%E6%97%8B%E6%A8%A1%E5%9E%8B%E3%80%81%E5%A2%9E%E9%87%8F%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 原型、螺旋模型、增量模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-V%E6%A8%A1%E5%9E%8B%E3%80%81%E5%96%B7%E6%B3%89%E6%A8%A1%E5%9E%8B%E3%80%81RAD"><span class="toc-number">1.3.</span> <span class="toc-text">1.3 V模型、喷泉模型、RAD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E6%9E%84%E4%BB%B6%E7%BB%84%E8%A3%85%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.4.</span> <span class="toc-text">1.4 构件组装模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91%E6%96%B9%E6%B3%95%EF%BC%88%E5%B0%8F%E9%A1%B9%E7%9B%AE%E3%80%81%E5%B0%8F%E5%9B%A2%E9%98%9F%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">2 敏捷开发方法（小项目、小团队）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">3  项目管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 时间管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-PERT%E5%9B%BE"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 PERT图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E7%94%98%E7%89%B9%E5%9B%BE"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 甘特图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86"><span class="toc-number">4.</span> <span class="toc-text">4 软件配置管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%8F%98%E6%9B%B4%E6%8E%A7%E5%88%B6"><span class="toc-number">4.1.</span> <span class="toc-text">1 变更控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6"><span class="toc-number">4.2.</span> <span class="toc-text">2 版本控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%A3%8E%E9%99%A9%E5%88%86%E7%B1%BB"><span class="toc-number">4.3.</span> <span class="toc-text">3 风险分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E8%BD%AF%E4%BB%B6%E8%83%BD%E5%8A%9B%E6%88%90%E7%86%9F%E6%A8%A1%E5%9E%8BCMM"><span class="toc-number">4.4.</span> <span class="toc-text">4 软件能力成熟模型CMM</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%EF%BC%88%E5%A4%A7%E9%A2%98%E7%AC%AC1%E9%A2%98%EF%BC%8C%E8%80%83%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90%EF%BC%89"><span class="toc-number">5.</span> <span class="toc-text">5 系统分析（大题第1题，考需求分析）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B"><span class="toc-number">5.1.</span> <span class="toc-text">1 需求工程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%9C%80%E6%B1%82%E5%88%86%E7%B1%BB"><span class="toc-number">5.2.</span> <span class="toc-text">2 需求分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90"><span class="toc-number">5.3.</span> <span class="toc-text">3 需求分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1"><span class="toc-number">6.</span> <span class="toc-text">6 系统设计</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E5%AE%9E%E6%96%BD"><span class="toc-number"></span> <span class="toc-text">8 嵌入式系统实施</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%B5%8B%E8%AF%95"><span class="toc-number">1.</span> <span class="toc-text">1 测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">2 测试方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B"><span class="toc-number">3.</span> <span class="toc-text">3 测试用例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%B5%8B%E8%AF%95%E9%98%B6%E6%AE%B5%EF%BC%88%E6%B5%8B%E8%AF%95%E7%BA%A7%E5%88%AB%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">4 测试阶段（测试级别）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E8%B0%83%E8%AF%95"><span class="toc-number">5.</span> <span class="toc-text">5 调试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E8%AF%84%E5%AE%A1"><span class="toc-number">6.</span> <span class="toc-text">6 评审</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E9%AA%8C%E8%AF%81%E4%B8%8E%E7%A1%AE%E8%AE%A4"><span class="toc-number">7.</span> <span class="toc-text">7 验证与确认</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95"><span class="toc-number"></span> <span class="toc-text">9 数据结构与算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-number">1.</span> <span class="toc-text">1 数据结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%AE%97%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">2 算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%BA%BF%E6%80%A7%E8%A1%A8"><span class="toc-number">3.</span> <span class="toc-text">3 线性表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E9%98%9F%E5%88%97%E5%92%8C%E6%A0%88"><span class="toc-number">4.</span> <span class="toc-text">4 队列和栈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%B9%BF%E4%B9%89%E8%A1%A8"><span class="toc-number">5.</span> <span class="toc-text">5 广义表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E4%B8%B2"><span class="toc-number">6.</span> <span class="toc-text">6 串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E6%95%B0%E7%BB%84"><span class="toc-number">7.</span> <span class="toc-text">7 数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91%EF%BC%88%E9%9D%9E%E7%BA%BF%E6%80%A7%EF%BC%89"><span class="toc-number">8.</span> <span class="toc-text">8 树与二叉树（非线性）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%EF%BC%88%E8%8A%82%E7%82%B9%E7%9A%84%E4%B8%AA%E6%95%B02%EF%BC%89"><span class="toc-number">8.1.</span> <span class="toc-text">二叉树（节点的个数2）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E9%81%8D%E5%8E%86"><span class="toc-number">8.2.</span> <span class="toc-text">二叉树遍历</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E5%A0%86"><span class="toc-number">9.</span> <span class="toc-text">9 堆</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-%E5%9B%BE"><span class="toc-number">10.</span> <span class="toc-text">10 图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5%E8%A1%A8%E7%A4%BA%E6%B3%95"><span class="toc-number">10.1.</span> <span class="toc-text">邻接矩阵表示法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%BB%E6%8E%A5%E9%93%BE%E8%A1%A8%E8%A1%A8%E7%A4%BA%E6%B3%95"><span class="toc-number">10.2.</span> <span class="toc-text">邻接链表表示法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86"><span class="toc-number">10.3.</span> <span class="toc-text">图的遍历</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-%E6%9F%A5%E6%89%BE"><span class="toc-number">11.</span> <span class="toc-text">11 查找</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%9F%A5%E6%89%BE%E5%88%86%E7%B1%BB"><span class="toc-number">11.1.</span> <span class="toc-text">1 查找分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95"><span class="toc-number">11.2.</span> <span class="toc-text">2 顺序查找算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE"><span class="toc-number">11.2.1.</span> <span class="toc-text">顺序查找</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%88%86%E6%B3%95%E6%9F%A5%E6%89%BE%EF%BC%88%E6%9C%89%E5%BA%8F%E7%9A%84%E7%BA%BF%E6%80%A7%E8%A1%A8%EF%BC%89"><span class="toc-number">11.2.2.</span> <span class="toc-text">二分法查找（有序的线性表）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%A0%91%E8%A1%A8%E6%9F%A5%E6%89%BE"><span class="toc-number">11.3.</span> <span class="toc-text">3 树表查找</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%EF%BC%88%E4%B9%9F%E5%8F%AB%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91%EF%BC%89"><span class="toc-number">11.3.1.</span> <span class="toc-text">二叉查找树（也叫二叉排序树）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E5%B9%B3%E8%A1%A1%E6%A0%91"><span class="toc-number">11.3.2.</span> <span class="toc-text">二叉平衡树</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91"><span class="toc-number">11.3.3.</span> <span class="toc-text">哈夫曼树</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#B%E6%A0%91"><span class="toc-number">11.3.4.</span> <span class="toc-text">B树</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%95%A3%E5%88%97%E8%A1%A8%E6%9F%A5%E6%89%BE"><span class="toc-number">11.4.</span> <span class="toc-text">4 散列表查找</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%93%88%E5%B8%8C%E6%9F%A5%E6%89%BE"><span class="toc-number">11.4.1.</span> <span class="toc-text">哈希查找</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80"><span class="toc-number"></span> <span class="toc-text">10 数字电路基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%94%B5%E5%AD%90%E7%94%B5%E8%B7%AF"><span class="toc-number">1.</span> <span class="toc-text">1 电子电路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF"><span class="toc-number">2.</span> <span class="toc-text">2 组合逻辑电路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95-%E7%9C%9F%E5%80%BC%E8%A1%A8"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 组合逻辑电路表示方法-真值表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95-%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 组合逻辑电路表示方法-布尔代数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%8D%E6%BC%94%E5%BE%8B%EF%BC%88%E6%91%A9%E6%A0%B9%E5%AE%9A%E5%BE%8B%EF%BC%89"><span class="toc-number">2.2.1.</span> <span class="toc-text">反演律（摩根定律）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E9%97%A8%E7%94%B5%E8%B7%AF"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 门电路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF-%E5%B8%B8%E7%94%A8%E8%AF%91%E7%A0%81%E5%99%A8"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 常用的组合逻辑电路-常用译码器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF-%E6%98%BE%E7%A4%BA%E8%AF%91%E7%A0%81%E5%99%A8"><span class="toc-number">2.5.</span> <span class="toc-text">2.5 常用的组合逻辑电路-显示译码器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF"><span class="toc-number">3.</span> <span class="toc-text">3 时序逻辑电路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E6%97%B6%E9%92%9F%E4%BF%A1%E5%8F%B7"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 时钟信号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 触发器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%94%B5%E5%B9%B3%E8%BD%AC%E6%8D%A2%E7%94%B5%E8%B7%AF"><span class="toc-number">4.</span> <span class="toc-text">4 电平转换电路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E9%9B%86%E6%88%90%E7%94%B5%E8%B7%AF"><span class="toc-number">4.1.</span> <span class="toc-text">数字集成电路</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#TTL-CMOS%E8%BD%AC%E6%8D%A2"><span class="toc-number">4.1.1.</span> <span class="toc-text">TTL -&gt;  CMOS转换</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E8%AF%AD%E9%9F%B3%E7%BC%96%E7%A0%81"><span class="toc-number">5.</span> <span class="toc-text">5 语音编码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A3%B0%E9%9F%B3%E4%B8%89%E8%A6%81%E7%B4%A0%EF%BC%9A"><span class="toc-number">5.1.</span> <span class="toc-text">声音三要素：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%8B%9F%E4%BF%A1%E5%8F%B7%E6%95%B0%E5%AD%97%E5%8C%96"><span class="toc-number">5.2.</span> <span class="toc-text">模拟信号数字化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%87%E6%A0%B7%E9%87%8F%E5%8C%96%E6%8A%80%E6%9C%AF%E5%8F%82%E6%95%B0"><span class="toc-number">5.3.</span> <span class="toc-text">采样量化技术参数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#11-%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BE%AE%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-number"></span> <span class="toc-text">11 嵌入式微处理器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="toc-number">1.</span> <span class="toc-text">1 基本结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BE%AE%E5%A4%84%E7%90%86%E5%99%A8%E5%88%86%E7%B1%BB"><span class="toc-number">2.</span> <span class="toc-text">2 嵌入式微处理器分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-number">3.</span> <span class="toc-text">3 体系结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-flynn%E5%88%86%E7%B1%BB"><span class="toc-number">4.</span> <span class="toc-text">4 flynn分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-CISC%E5%92%8CRISC"><span class="toc-number">5.</span> <span class="toc-text">5 CISC和RISC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E5%B8%B8%E7%94%A8%E7%9A%84%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-number">6.</span> <span class="toc-text">6 常用的嵌入式处理器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E6%96%AD%E7%B3%BB%E7%BB%9F"><span class="toc-number">6.1.</span> <span class="toc-text">中断系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86%E8%BF%87%E7%A8%8B"><span class="toc-number">6.1.1.</span> <span class="toc-text">中断处理过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%AD%E6%96%AD%E8%AF%86%E5%88%AB"><span class="toc-number">6.1.2.</span> <span class="toc-text">中断识别</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JATG"><span class="toc-number">6.2.</span> <span class="toc-text">JATG</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IO%E7%AB%AF%E5%8F%A3%E7%9A%84%E7%BC%96%E5%9D%80%E6%96%B9%E6%B3%95"><span class="toc-number">6.3.</span> <span class="toc-text">IO端口的编址方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E6%A0%B8%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-number">6.4.</span> <span class="toc-text">双核处理器</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#12-%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AD%98%E5%82%A8%E4%BD%93%E7%B3%BB"><span class="toc-number"></span> <span class="toc-text">12 嵌入式系统的存储体系</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%88%86%E7%B1%BB"><span class="toc-number">1.</span> <span class="toc-text">1 分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-ROM"><span class="toc-number">2.</span> <span class="toc-text">2 ROM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-RAM"><span class="toc-number">3.</span> <span class="toc-text">3 RAM</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#13-%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E8%AE%BE%E5%A4%87"><span class="toc-number"></span> <span class="toc-text">13 嵌入式系统输入输出设备</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-GPIO"><span class="toc-number">1.</span> <span class="toc-text">1 GPIO</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-A-D%E8%BD%AC%E6%8D%A2%E5%99%A8"><span class="toc-number">2.</span> <span class="toc-text">2 A&#x2F;D转换器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-D-A%E8%BD%AC%E6%8D%A2%E5%99%A8"><span class="toc-number">2.1.</span> <span class="toc-text">3 D&#x2F;A转换器</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#14-%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BA%BF%E4%B8%8E%E9%80%9A%E4%BF%A1%E6%8E%A5%E5%8F%A3"><span class="toc-number"></span> <span class="toc-text">14 嵌入式系统总线与通信接口</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%B8%B2%E8%A1%8C%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.</span> <span class="toc-text">1 串行接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%BC%82%E6%AD%A5%E9%80%9A%E4%BF%A1%E5%92%8C%E5%90%8C%E6%AD%A5%E9%80%9A%E4%BF%A1"><span class="toc-number">2.</span> <span class="toc-text">2 异步通信和同步通信</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%B8%B8%E8%A7%81%E7%9A%84%E4%B8%B2%E8%A1%8C%E6%8E%A5%E5%8F%A3"><span class="toc-number">3.</span> <span class="toc-text">3 常见的串行接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-PCI%E6%80%BB%E7%BA%BF"><span class="toc-number">4.</span> <span class="toc-text">4 PCI总线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-USB%E6%80%BB%E7%BA%BF"><span class="toc-number">5.</span> <span class="toc-text">5 USB总线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-SPI%E3%80%81IIC"><span class="toc-number">6.</span> <span class="toc-text">6 SPI、IIC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E7%BD%91%E8%B7%AF%E6%8E%A5%E5%8F%A3"><span class="toc-number">7.</span> <span class="toc-text">7 网路接口</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A5%E5%A4%AA%E7%BD%91%E6%8E%A5%E5%8F%A3-IEEE802-3%E6%A0%87%E5%87%86"><span class="toc-number">7.1.</span> <span class="toc-text">以太网接口   IEEE802.3标准</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RapdIO%E6%80%BB%E7%BA%BF"><span class="toc-number">7.2.</span> <span class="toc-text">RapdIO总线</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E6%80%BB%E7%BA%BF%E5%88%86%E7%B1%BB"><span class="toc-number">8.</span> <span class="toc-text">8 总线分类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#15-%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6"><span class="toc-number"></span> <span class="toc-text">15 嵌入式硬件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1%E5%8E%9F%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">1 电路设计原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-PCB%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1"><span class="toc-number">2.</span> <span class="toc-text">2 PCB电路设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1"><span class="toc-number">3.</span> <span class="toc-text">3 电子设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E5%AD%90%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E8%87%AA%E5%8A%A8%E5%8C%96ESDA"><span class="toc-number">3.1.</span> <span class="toc-text">电子系统设计自动化ESDA</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ASIC%E5%88%86%E7%B1%BB"><span class="toc-number">3.2.</span> <span class="toc-text">ASIC分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%AC%E4%BB%B6%E6%8F%8F%E8%BF%B0%E8%AF%AD%E8%A8%80HDL"><span class="toc-number">3.3.</span> <span class="toc-text">硬件描述语言HDL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E8%B7%AF%E7%BA%A7%E8%AE%BE%E8%AE%A1%E5%92%8C%E7%B3%BB%E7%BB%9F%E7%BA%A7%E8%AE%BE%E8%AE%A1"><span class="toc-number">3.4.</span> <span class="toc-text">电路级设计和系统级设计</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%94%B5%E5%AD%90%E7%94%B5%E8%B7%AF%E6%B5%8B%E8%AF%95"><span class="toc-number">4.</span> <span class="toc-text">4 电子电路测试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">4.1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95"><span class="toc-number">4.2.</span> <span class="toc-text">测试方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%AC%E4%BB%B6%E5%B9%B2%E6%89%B0%E6%8E%AA%E6%96%BD"><span class="toc-number">4.3.</span> <span class="toc-text">硬件干扰措施</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B2%E6%89%B0%E7%9A%84%E8%80%A6%E5%90%88%E6%96%B9%E5%BC%8F"><span class="toc-number">4.4.</span> <span class="toc-text">干扰的耦合方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%97%E5%B9%B2%E6%89%B0%E6%8E%AA%E6%96%BD"><span class="toc-number">4.5.</span> <span class="toc-text">抗干扰措施</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#16-%E7%9F%A5%E8%AF%86%E4%BA%A7%E6%9D%83%E4%B8%8E%E6%A0%87%E5%87%86%E5%8C%96"><span class="toc-number"></span> <span class="toc-text">16 知识产权与标准化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%9F%A5%E8%AF%86%E4%BA%A7%E6%9D%83"><span class="toc-number">1.</span> <span class="toc-text">1 知识产权</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E4%BA%A7%E6%9D%83%E7%89%B9%E7%82%B9"><span class="toc-number">1.1.</span> <span class="toc-text">知识产权特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%AF%E5%90%A6%E4%B8%BA%E8%81%8C%E5%8A%A1%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.2.</span> <span class="toc-text">是否为职务软件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BF%9D%E6%8A%A4%E8%8C%83%E5%9B%B4%E4%B8%8E%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.</span> <span class="toc-text">2 保护范围与对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BF%9D%E6%8A%A4%E6%9C%9F%E9%99%90"><span class="toc-number">3.</span> <span class="toc-text">3 保护期限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%9F%A5%E8%AF%86%E4%BA%A7%E6%9D%83%E7%9A%84%E5%BD%92%E5%B1%9E"><span class="toc-number">4.</span> <span class="toc-text">4 知识产权的归属</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%90%88%E7%90%86%E4%BD%BF%E7%94%A8"><span class="toc-number">5.</span> <span class="toc-text">5 合理使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E4%BE%B5%E6%9D%83%E5%88%A4%E5%AE%9A"><span class="toc-number">6.</span> <span class="toc-text">6 侵权判定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E6%A0%87%E5%87%86%E5%88%86%E7%B1%BB"><span class="toc-number">7.</span> <span class="toc-text">7 标准分类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#17-%E5%A4%9A%E5%AA%92%E4%BD%93%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-number"></span> <span class="toc-text">17 多媒体基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E5%8C%96%E8%BF%87%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">数字化过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%B9%E9%87%8F%E8%AE%A1%E7%AE%97"><span class="toc-number">2.</span> <span class="toc-text">容量计算</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Primary</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script src="xxxx"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"]):not([href="/music/"]):not([href="/no-pjax/"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo injector body_end start --><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(https://cdn.pixabay.com/photo/2016/10/20/18/35/earth-1756274_1280.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Linux/&quot;);" href="javascript:void(0);">Linux</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">hexo指南</span></li><li class="categoryBar-list-item" style="background:url(https://cdn.pixabay.com/photo/2012/04/13/01/23/moon-31665_1280.png);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/架构/&quot;);" href="javascript:void(0);">架构</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">c语言代码</span></li><li class="categoryBar-list-item" style="background:url(https://cdn.pixabay.com/photo/2020/02/03/20/49/technology-4816658_1280.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/markdown/&quot;);" href="javascript:void(0);">markdown</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">Linux驱动</span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/单片机/&quot;);" href="javascript:void(0);">单片机</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/STM32/&quot;);" href="javascript:void(0);">STM32</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/linux/&quot;);" href="javascript:void(0);">linux</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/嵌入式/&quot;);" href="javascript:void(0);">嵌入式</a><span class="categoryBar-list-count">12</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/数据结构/&quot;);" href="javascript:void(0);">数据结构</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/操作系统/&quot;);" href="javascript:void(0);">操作系统</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2024/03/01/Linux卡片电脑/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="2024/03/01/Linux卡片电脑/image-20240301132644102.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-03-01</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2024/03/01/Linux卡片电脑/&quot;);" href="javascript:void(0);" alt="">Linux卡片电脑</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2024/03/01/Linux卡片电脑/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2024/03/19/通信协议/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="2024/03/19/通信协议/image-20231102200224551.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-03-19</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2024/03/19/通信协议/&quot;);" href="javascript:void(0);" alt="">通信协议</a><div class="blog-slider__text">常用的通信协议</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2024/03/19/通信协议/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/10/21/ARM体系架构/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://tse3-mm.cn.bing.net/th/id/OIP-C.kjFfv4jLeUqAtdFJktUDiQHaEK?w=312&amp;h=180&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.3&amp;pid=1.7" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-10-21</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/10/21/ARM体系架构/&quot;);" href="javascript:void(0);" alt="">ARM体系架构</a><div class="blog-slider__text">帮助快速了解ARM架构</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/10/21/ARM体系架构/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2024/03/19/PC性能检测站/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="2024/03/19/PC性能检测站/image-20240301180803046.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-03-19</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2024/03/19/PC性能检测站/&quot;);" href="javascript:void(0);" alt="">PC性能检测站</a><div class="blog-slider__text">实战项目</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2024/03/19/PC性能检测站/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/12/11/Linux知识点汇总/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://tse2-mm.cn.bing.net/th/id/OIP-C.lh4fi-Kapb51zrbET9aXQQHaI4?w=131&amp;h=180&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.3&amp;pid=1.7" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-12-11</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/12/11/Linux知识点汇总/&quot;);" href="javascript:void(0);" alt="">Linux知识点总结</a><div class="blog-slider__text">linux学习笔记</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/12/11/Linux知识点汇总/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><!-- hexo injector body_end end --></body></html>
